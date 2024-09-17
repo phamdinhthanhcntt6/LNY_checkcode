@@ -24,28 +24,28 @@ const Numerology = () => {
             <Image src={iconNumerology.four} alt="two" />
           </button>
           <button>
-            <Image src={iconNumerology.one} alt="one" />
+            <Image src={iconNumerology.five} alt="one" />
           </button>
           <button>
-            <Image src={iconNumerology.two} alt="two" />
+            <Image src={iconNumerology.six} alt="two" />
           </button>
           <button>
-            <Image src={iconNumerology.three} alt="two" />
+            <Image src={iconNumerology.seven} alt="two" />
           </button>
           <button>
-            <Image src={iconNumerology.four} alt="two" />
+            <Image src={iconNumerology.eight} alt="two" />
           </button>
           <button>
-            <Image src={iconNumerology.one} alt="one" />
+            <Image src={iconNumerology.nine} alt="one" />
           </button>
           <button>
-            <Image src={iconNumerology.two} alt="two" />
+            <Image src={iconNumerology.eleven} alt="two" />
           </button>
           <button>
-            <Image src={iconNumerology.three} alt="two" />
+            <Image src={iconNumerology.twenty_two} alt="two" />
           </button>
           <button>
-            <Image src={iconNumerology.four} alt="two" />
+            <Image src={iconNumerology.thirty_three} alt="two" />
           </button>
         </div>
         <CardComponent

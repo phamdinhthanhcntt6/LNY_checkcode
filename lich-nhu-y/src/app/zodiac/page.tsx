@@ -1,3 +1,4 @@
+import { iconZodiac } from "@/assets/iconZodiac/iconZodiac";
 import { images } from "@/assets/image";
 import { CardComponent } from "@/components/CardComponent";
 import Image from "next/image";
@@ -10,9 +11,42 @@ const Zodiac = () => {
           Cung hoàng đạo
         </div>
         <div className="mb-[38px] flex flex-row gap-4">
-          <Image alt="" src={images.avatar} className="w-[66px] h-[66px]" />
-          <Image alt="" src={images.avatar} className="w-[66px] h-[66px]" />
-          <Image alt="" src={images.avatar} className="w-[66px] h-[66px]" />
+          <button>
+            <Image src={iconZodiac.aries} alt="one" />
+          </button>
+          <button>
+            <Image src={iconZodiac.two} alt="two" />
+          </button>
+          <button>
+            <Image src={iconZodiac.three} alt="two" />
+          </button>
+          <button>
+            <Image src={iconZodiac.four} alt="two" />
+          </button>
+          <button>
+            <Image src={iconZodiac.five} alt="one" />
+          </button>
+          <button>
+            <Image src={iconZodiac.six} alt="two" />
+          </button>
+          <button>
+            <Image src={iconZodiac.seven} alt="two" />
+          </button>
+          <button>
+            <Image src={iconZodiac.eight} alt="two" />
+          </button>
+          <button>
+            <Image src={iconZodiac.nine} alt="one" />
+          </button>
+          <button>
+            <Image src={iconZodiac.eleven} alt="two" />
+          </button>
+          <button>
+            <Image src={iconZodiac.twenty_two} alt="two" />
+          </button>
+          <button>
+            <Image src={iconZodiac.thirty_three} alt="two" />
+          </button>
         </div>
         <CardComponent title="Bạch Dương" titlePosition="left" noBorder>
           <div className="p-[10px]">
