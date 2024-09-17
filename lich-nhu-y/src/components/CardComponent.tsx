@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { icons } from "@/assets/icon";
 import Image from "next/image";
-import { images } from "@/assets/image";
+import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
@@ -11,6 +11,7 @@ interface Props {
   onClose?: () => void;
   noBorder?: boolean;
 }
+
 export const CardComponent = (props: Props) => {
   const { children, title, className, titlePosition, onClose, noBorder } =
     props;
@@ -39,11 +40,7 @@ export const CardComponent = (props: Props) => {
             )} */}
             {onClose && (
               <button onClick={onClose}>
-                <Image
-                  alt=""
-                  src={images.close1}
-                  className="w-6 h-6 mr-[15px]"
-                />
+                <Image alt="" src={icons.close} className="w-6 h-6 mr-[15px]" />
               </button>
             )}
           </div>

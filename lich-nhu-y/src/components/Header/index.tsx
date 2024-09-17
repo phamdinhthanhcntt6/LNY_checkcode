@@ -1,11 +1,13 @@
 "use client";
 
-import { images } from "@/assets/image";
 import { navItem } from "@/components/Header/navItem";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { icons } from "@/assets/icon";
+import { images } from "@/assets/image";
+import ShowAds from "@/components/ShowAds";
 
 export const Header = () => {
   const [isVisble, setIsVisble] = useState(false);
@@ -79,13 +81,13 @@ export const Header = () => {
         </div>
         <div className="flex flex-row items-center gap-6 ml-[37px] max-xl:hidden">
           <button className="flex flex-row">
-            <Image alt="" src={images.facebook} />
+            <Image alt="facebook" src={icons.facebook} />
             <div className="text-[#6E7074] font-medium text-sm ml-[3px] max-2xl:hidden">
               Facebook
             </div>
           </button>
           <button className="flex flex-row">
-            <Image src={images.instagram} alt="" />
+            <Image src={icons.instagram} alt="instagram" />
             <div className="text-[#6E7074] font-medium text-sm ml-[3px] max-2xl:hidden">
               Instagram
             </div>
@@ -97,7 +99,7 @@ export const Header = () => {
               setIsVisble(!isVisble);
             }}
           >
-            <Image alt="" src={images.ic_menu} />
+            <Image alt="menu" src={icons.menu} />
           </button>
         </div>
       </div>

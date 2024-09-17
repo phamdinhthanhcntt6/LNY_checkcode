@@ -1,3 +1,4 @@
+import { iconNumerology } from "@/assets/iconNumerology/iconNumerology";
 import { images } from "@/assets/image";
 import { CardComponent } from "@/components/CardComponent";
 import Image from "next/image";
@@ -10,9 +11,42 @@ const Numerology = () => {
           Thần số học
         </div>
         <div className="mb-[38px] flex flex-row gap-4">
-          <Image alt="" src={images.avatar} className="w-[66px] h-[66px]" />
-          <Image alt="" src={images.avatar} className="w-[66px] h-[66px]" />
-          <Image alt="" src={images.avatar} className="w-[66px] h-[66px]" />
+          <button>
+            <Image src={iconNumerology.one} alt="one" />
+          </button>
+          <button>
+            <Image src={iconNumerology.two} alt="two" />
+          </button>
+          <button>
+            <Image src={iconNumerology.three} alt="two" />
+          </button>
+          <button>
+            <Image src={iconNumerology.four} alt="two" />
+          </button>
+          <button>
+            <Image src={iconNumerology.one} alt="one" />
+          </button>
+          <button>
+            <Image src={iconNumerology.two} alt="two" />
+          </button>
+          <button>
+            <Image src={iconNumerology.three} alt="two" />
+          </button>
+          <button>
+            <Image src={iconNumerology.four} alt="two" />
+          </button>
+          <button>
+            <Image src={iconNumerology.one} alt="one" />
+          </button>
+          <button>
+            <Image src={iconNumerology.two} alt="two" />
+          </button>
+          <button>
+            <Image src={iconNumerology.three} alt="two" />
+          </button>
+          <button>
+            <Image src={iconNumerology.four} alt="two" />
+          </button>
         </div>
         <CardComponent
           title="Số 1 : Nhà Lãnh Đạo"
