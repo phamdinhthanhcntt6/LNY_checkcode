@@ -4,7 +4,7 @@ import { images } from "@/assets/image";
 import { CardComponent } from "@/components/CardComponent";
 import Modal from "@/components/Modal";
 import { handleDayType, nameThu } from "@/libs/utils";
-import { getLunarDayInfo } from "@lich-nhu-y/lunar";
+import { getLunarDayInfo, solar2Lunar } from "@lich-nhu-y/lunar";
 import { get } from "lodash";
 import moment from "moment";
 import Image from "next/image";
@@ -47,6 +47,11 @@ const Content = () => {
 
   const handleChange = (event: any) => {
     setValue(event.target.value);
+  };
+
+  const handleSolar2Lunar = (solarDay: any) => {
+    const res = solar2Lunar(solarDay, "DD/MM/YYYY");
+    setResult(res);
   };
 
   const openModal = () => {
@@ -155,7 +160,6 @@ const Content = () => {
                 placeholder="dd/mm/yyyy"
                 className="py-[19px] rounded-2xl w-full mt-2 border border-[#111111] mb-6 px-6"
               />
-
               {result && <div>Ngày âm là: {result.date}</div>}
               <button
                 className="bg-[#111111] text-white w-full py-[19px] rounded-2xl font-bold text-sm"
