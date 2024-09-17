@@ -4,7 +4,7 @@ import Image from "next/image";
 export const Footer = () => {
   return (
     <>
-      <div className="grid grid-cols-3 border-dashed w-full bg-[border-[#F2F4F7] border-[#111111] border-b border-t px-16 py-5 mt-12 max-md:grid-cols-1 max-lg:p-1">
+      <div className="grid grid-cols-3 border-dashed w-full bg-[border-[#F2F4F7] border-[#111111] border-b border-t px-16 py-5 mt-12 max-md:grid-cols-1 max-lg:p-4">
         <div className="flex flex-col">
           <div className="text-black font-bold text-base">Lịch Như Ý Team</div>
           <ul className="list-disc pl-5 mt-4">

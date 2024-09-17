@@ -6,47 +6,34 @@ import Image from "next/image";
 const Numerology = () => {
   return (
     <div>
-      <div className="px-16 max-lg:p-1">
+      <div className="px-16 max-lg:p-4">
         <div className="text-[#111111] font-bold text-[32px] mb-6 mt-12">
           Thần số học
         </div>
-        <div className="mb-[38px] flex flex-row gap-4">
-          <button>
-            <Image src={iconNumerology.one} alt="one" />
-          </button>
-          <button>
-            <Image src={iconNumerology.two} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.three} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.four} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.five} alt="one" />
-          </button>
-          <button>
-            <Image src={iconNumerology.six} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.seven} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.eight} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.nine} alt="one" />
-          </button>
-          <button>
-            <Image src={iconNumerology.eleven} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.twenty_two} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.thirty_three} alt="two" />
-          </button>
+        <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
+          <Image src={iconNumerology.one} alt="one" />
+
+          <Image src={iconNumerology.two} alt="two" />
+
+          <Image src={iconNumerology.three} alt="three" />
+
+          <Image src={iconNumerology.four} alt="four" />
+
+          <Image src={iconNumerology.five} alt="five" />
+
+          <Image src={iconNumerology.six} alt="six" />
+
+          <Image src={iconNumerology.seven} alt="seven" />
+
+          <Image src={iconNumerology.eight} alt="eight" />
+
+          <Image src={iconNumerology.nine} alt="nine" />
+
+          <Image src={iconNumerology.eleven} alt="eleven" />
+
+          <Image src={iconNumerology.twenty_two} alt="twenty-two" />
+
+          <Image src={iconNumerology.thirty_three} alt="thirty-three" />
         </div>
         <CardComponent
           title="Số 1 : Nhà Lãnh Đạo"
@@ -82,7 +69,6 @@ const Numerology = () => {
                         src={images.avatar}
                         className="w-[66px] h-[66px]"
                       />
-
                       <div>Name</div>
                     </div>
                   </div>

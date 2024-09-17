@@ -6,47 +6,34 @@ import Image from "next/image";
 const Zodiac = () => {
   return (
     <div>
-      <div className="px-16 max-lg:p-1">
+      <div className="px-16 max-lg:p-4">
         <div className="text-[#111111] font-bold text-[32px] mb-6 mt-12">
           Cung hoàng đạo
         </div>
-        <div className="mb-[38px] flex flex-row gap-4">
-          <button>
-            <Image src={iconZodiac.aries} alt="one" />
-          </button>
-          <button>
-            <Image src={iconZodiac.two} alt="two" />
-          </button>
-          <button>
-            <Image src={iconZodiac.three} alt="two" />
-          </button>
-          <button>
-            <Image src={iconZodiac.four} alt="two" />
-          </button>
-          <button>
-            <Image src={iconZodiac.five} alt="one" />
-          </button>
-          <button>
-            <Image src={iconZodiac.six} alt="two" />
-          </button>
-          <button>
-            <Image src={iconZodiac.seven} alt="two" />
-          </button>
-          <button>
-            <Image src={iconZodiac.eight} alt="two" />
-          </button>
-          <button>
-            <Image src={iconZodiac.nine} alt="one" />
-          </button>
-          <button>
-            <Image src={iconZodiac.eleven} alt="two" />
-          </button>
-          <button>
-            <Image src={iconZodiac.twenty_two} alt="two" />
-          </button>
-          <button>
-            <Image src={iconZodiac.thirty_three} alt="two" />
-          </button>
+        <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
+          <Image src={iconZodiac.aries} alt="one" />
+
+          <Image src={iconZodiac.taurus} alt="two" />
+
+          <Image src={iconZodiac.gemini} alt="two" />
+
+          <Image src={iconZodiac.cancer} alt="two" />
+
+          <Image src={iconZodiac.leo} alt="one" />
+
+          <Image src={iconZodiac.virgo} alt="two" />
+
+          <Image src={iconZodiac.libra} alt="two" />
+
+          <Image src={iconZodiac.scorpio} alt="two" />
+
+          <Image src={iconZodiac.sagittarius} alt="one" />
+
+          <Image src={iconZodiac.capricorn} alt="two" />
+
+          <Image src={iconZodiac.aquarius} alt="two" />
+
+          <Image src={iconZodiac.pisces} alt="two" />
         </div>
         <CardComponent title="Bạch Dương" titlePosition="left" noBorder>
           <div className="p-[10px]">

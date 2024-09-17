@@ -47,7 +47,7 @@ export const CardComponent = (props: Props) => {
           <div className="border border-dashed w-full flex flex-row border-[#111111]" />
         </div>
       )}
-      <div className="">{children}</div>
+      <>{children}</>
     </div>
   );
 };
