@@ -8,8 +8,8 @@ export const Calendar = () => {
   const lunarDayInfo = useMemo(() => getLunarDayInfoFormatted(), []);
 
   return (
-    <CardComponent className="grid grid-cols-11 gap-4 mt-12 border border-[#111111]  bg-white w-full max-lg:border-none max-lg:mt-0 max-md:p-4 max-lg:grid-cols-1">
-      <div className="text-center col-span-5 p-6 max-md:p-0 rounded-l-[32px] mx-auto lg:border-[#6E7074] lg:border-r">
+    <CardComponent className="grid grid-cols-11 gap-4 mt-12 border border-[#111111]  bg-white w-full max-lg:border-none max-lg:mt-0 max-md:p-1 max-xl:grid-cols-1">
+      <div className="text-center col-span-5 p-6 max-md:p-0 rounded-l-[32px] mx-auto lg:border-[#6E7074] xl:border-r">
         <div className="text-center w-full">
           <div className="flex flex-col px-2 justify-center max-lg:w-full">
             <div className="text-[156px] text-[#28A521] font-extrabold leading-[156px]">
@@ -77,7 +77,7 @@ export const Calendar = () => {
           </div>
         </div>
       </div>
-      <div className="col-span-6 p-6">
+      <div className="col-span-6 w-full xl:-ml-2 max-md:">
         <DatePicker />
       </div>
     </CardComponent>

@@ -9,8 +9,8 @@ const array = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const HomePage = () => {
   return (
-    <div className="bg-white w-full max-lg:p-4">
-      <div className="px-16 max-lg:p-1 mt-9">
+    <div className="bg-white w-full max-lg:p-1">
+      <div className="px-16 max-lg:px-1 mt-9">
         <div className="flex flex-col max-md:px-1">
           <Image
             alt="banner"

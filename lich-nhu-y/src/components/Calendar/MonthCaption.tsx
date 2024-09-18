@@ -1,4 +1,3 @@
-import React from "react";
 import { CalendarMonth } from "react-day-picker";
 
 /**
@@ -10,13 +9,17 @@ import { CalendarMonth } from "react-day-picker";
 export function MonthCaption(
   props: {
     /** The month where the grid is displayed. */
-    calendarMonth: CalendarMonth;
+    calendarMonth?: CalendarMonth;
     /** The index where this month is displayed. */
-    displayIndex: number;
+    displayIndex?: number;
   } & JSX.IntrinsicElements["div"]
 ) {
   const { calendarMonth, displayIndex, ...divProps } = props;
-  return <div {...divProps} className="text-lg font-bold text-[#111111]"></div>;
+  return (
+    <div className="flex flex-row justify-between mb-4">
+      <div {...divProps} className="text-lg font-bold text-[#111111]"></div>
+    </div>
+  );
 }
 
 export type MonthCaptionProps = Parameters<typeof MonthCaption>[0];

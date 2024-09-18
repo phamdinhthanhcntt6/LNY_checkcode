@@ -28,7 +28,7 @@ export const handleDayType = (dayType: string): string | undefined => {
 export const handleDayTypeColor = (dayType: string) => {
   switch (dayType) {
     case "GOOD":
-      return "#28A521";
+      return "green";
     case "BAD":
       return "red";
     default:

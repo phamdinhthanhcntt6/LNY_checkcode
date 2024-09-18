@@ -8,8 +8,8 @@ import React from "react";
  */
 export function Weekdays(props: JSX.IntrinsicElements["tr"]) {
   return (
-    <thead>
-      <tr>{props.children}</tr>
+    <thead className="border border-[#111111] mb-4 rounded-3xl">
+      <tr className="test_1">{props.children}</tr>
     </thead>
   );
 }

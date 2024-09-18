@@ -1,13 +1,13 @@
 "use client";
 
 import { DayPicker } from "react-day-picker";
+import { Day } from "./Day";
 import { Weekdays } from "./Weekdays";
 import { MonthCaption } from "./MonthCaption";
-import { Day } from "./Day";
 
 export const DatePicker = () => {
   return (
-    <div>
+    <div className="p-6 max-md:p-0">
       <DayPicker
         mode="single"
         // locale={vi}
