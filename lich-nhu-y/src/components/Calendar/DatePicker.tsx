@@ -19,7 +19,12 @@ export const DatePicker = () => {
           MonthCaption,
         }}
         formatters={{
-          formatCaption: (date, options) => format(date, "LLLL yyyy", options),
+          formatCaption: (date, options) => {
+            const formattedDate = format(date, "MMMM yyyy", options);
+            return (
+              formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1)
+            );
+          },
           formatWeekdayName: (date, options) => {
             const weekday = format(date, "EEE", options);
             return weekday === "CN" ? "Chủ nhật" : weekday;
