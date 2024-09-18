@@ -1,3 +1,4 @@
+import DatePicker from "@/components/Calendar/DatePicker";
 import { CardComponent } from "@/components/CardComponent";
 import { getLunarDayInfoFormatted, handleDayType, nameThu } from "@/libs/utils";
 import { get, isEmpty } from "lodash";
@@ -76,7 +77,9 @@ export const Calendar = () => {
           </div>
         </div>
       </div>
-      <div className="col-span-6 p-6">Calendar</div>
+      <div className="col-span-6 p-6">
+        <DatePicker />
+      </div>
     </CardComponent>
   );
 };

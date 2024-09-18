@@ -1,26 +1,30 @@
-import { vi } from "date-fns/locale";
+"use client";
+
 import { DayPicker } from "react-day-picker";
-import { Day } from "./CustomDay";
 import { Weekdays } from "./Weekdays";
-import { format } from "date-fns";
+import { MonthCaption } from "./MonthCaption";
+import { Day } from "./Day";
 
 export const DatePicker = () => {
   return (
     <div>
       <DayPicker
         mode="single"
-        locale={vi}
+        // locale={vi}
         components={{
           Day,
           Weekdays,
+          MonthCaption,
         }}
-        formatters={{
-          formatCaption: (date, options) => format(date, "LLLL yyyy", options),
-          formatWeekdayName: (date, options) => {
-            const weekday = format(date, "EEE", options);
-            return weekday === "CN" ? "Chủ nhật" : weekday;
-          },
-        }}
+        formatters={
+          {
+            // formatCaption: (date, options) => format(date, "LLLL yyyy", options),
+            // formatWeekdayName: (date, options) => {
+            //   const weekday = format(date, "EEE", options);
+            //   return weekday === "CN" ? "Chủ nhật" : weekday;
+            // },
+          }
+        }
       />
     </div>
   );

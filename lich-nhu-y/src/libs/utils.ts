@@ -25,6 +25,17 @@ export const handleDayType = (dayType: string): string | undefined => {
   return dayTypes[dayType];
 };
 
+export const handleDayTypeColor = (dayType: string) => {
+  switch (dayType) {
+    case "GOOD":
+      return "#28A521";
+    case "BAD":
+      return "red";
+    default:
+      return "gray";
+  }
+};
+
 export const nameThu = (thu: string): string | undefined => {
   const daysOfWeek: { [key: string]: string } = {
     Monday: "Thứ hai",
