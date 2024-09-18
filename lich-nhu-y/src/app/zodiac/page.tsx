@@ -28,7 +28,7 @@ const Zodiac = () => {
                   <div className="uppercase text-base text-[#111111] font-extrabold">
                     Người nổi tiếng cung bạch dương
                   </div>
-                  <div className="flex flex-row mt-6 gap-12 mx-auto">
+                  <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar mt-6">
                     <div className="flex flex-col items-center">
                       <Image
                         alt=""
