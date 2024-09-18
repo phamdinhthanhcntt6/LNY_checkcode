@@ -1,3 +1,5 @@
+import { iconZodiacData } from "@/app/zodiac/iconZodiac";
+import { iconZodiac } from "@/assets/iconZodiac/iconZodiac";
 import { images } from "@/assets/image";
 import { CardComponent } from "@/components/CardComponent";
 import Image from "next/image";
@@ -5,14 +7,14 @@ import Image from "next/image";
 const Zodiac = () => {
   return (
     <div>
-      <div className="px-16 max-lg:p-1">
+      <div className="px-16 max-lg:p-4">
         <div className="text-[#111111] font-bold text-[32px] mb-6 mt-12">
           Cung hoàng đạo
         </div>
-        <div className="mb-[38px] flex flex-row gap-4">
-          <Image alt="" src={images.avatar} className="w-[66px] h-[66px]" />
-          <Image alt="" src={images.avatar} className="w-[66px] h-[66px]" />
-          <Image alt="" src={images.avatar} className="w-[66px] h-[66px]" />
+        <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
+          {iconZodiacData.map((item) => (
+            <Image alt={`${item.id}`} src={item.image} />
+          ))}
         </div>
         <CardComponent title="Bạch Dương" titlePosition="left" noBorder>
           <div className="p-[10px]">
@@ -26,7 +28,7 @@ const Zodiac = () => {
                   <div className="uppercase text-base text-[#111111] font-extrabold">
                     Người nổi tiếng cung bạch dương
                   </div>
-                  <div className="flex flex-row mt-6 gap-12 mx-auto">
+                  <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar mt-6">
                     <div className="flex flex-col items-center">
                       <Image
                         alt=""

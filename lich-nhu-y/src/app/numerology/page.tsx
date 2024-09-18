@@ -1,3 +1,4 @@
+import { iconNumerologyData } from "@/app/numerology/iconNumerology";
 import { iconNumerology } from "@/assets/iconNumerology/iconNumerology";
 import { images } from "@/assets/image";
 import { CardComponent } from "@/components/CardComponent";
@@ -6,47 +7,14 @@ import Image from "next/image";
 const Numerology = () => {
   return (
     <div>
-      <div className="px-16 max-lg:p-1">
+      <div className="px-16 max-lg:p-4">
         <div className="text-[#111111] font-bold text-[32px] mb-6 mt-12">
           Thần số học
         </div>
-        <div className="mb-[38px] flex flex-row gap-4">
-          <button>
-            <Image src={iconNumerology.one} alt="one" />
-          </button>
-          <button>
-            <Image src={iconNumerology.two} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.three} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.four} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.one} alt="one" />
-          </button>
-          <button>
-            <Image src={iconNumerology.two} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.three} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.four} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.one} alt="one" />
-          </button>
-          <button>
-            <Image src={iconNumerology.two} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.three} alt="two" />
-          </button>
-          <button>
-            <Image src={iconNumerology.four} alt="two" />
-          </button>
+        <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
+          {iconNumerologyData.map((item) => (
+            <Image alt={`${item.id}`} src={item.image} />
+          ))}
         </div>
         <CardComponent
           title="Số 1 : Nhà Lãnh Đạo"
@@ -66,7 +34,7 @@ const Numerology = () => {
                   <div className="uppercase text-base text-[#111111] font-extrabold">
                     Người nổi tiếng có số đường đời 1
                   </div>
-                  <div className="flex flex-row mt-6 gap-12">
+                  <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar mt-6">
                     <div className="flex flex-col items-center">
                       <Image
                         alt=""
@@ -82,7 +50,6 @@ const Numerology = () => {
                         src={images.avatar}
                         className="w-[66px] h-[66px]"
                       />
-
                       <div>Name</div>
                     </div>
                   </div>

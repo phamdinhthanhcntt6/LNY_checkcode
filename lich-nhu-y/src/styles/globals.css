@@ -15,3 +15,85 @@ body {
   background: black;
   border-radius: 10px;
 }
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE và Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, và Opera */
+}
+
+.rdp-root {
+  width: 100%;
+  position: relative;
+  padding: 0;
+}
+
+.rdp-nav {
+  position: absolute;
+  right: 0;
+}
+
+.rdp-month_grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+thead,
+tr {
+  width: 100%;
+}
+
+.rdp-weeks {
+  width: 100%;
+  gap: 3px;
+  display: flex;
+  flex-direction: column;
+  columns: 7;
+
+  /* Thêm media query để giảm khoảng cách khi chiều rộng nhỏ hơn md */
+  @media (max-width: 768px) {
+    /* Thay 768px bằng giá trị md bạn muốn */
+    gap: 1.5px;
+  }
+}
+
+.rdp-week {
+  gap: 3px;
+  display: flex;
+  flex-direction: row;
+
+  /* Thêm media query để giảm khoảng cách khi chiều rộng nhỏ hơn md */
+  @media (max-width: 768px) {
+    /* Thay 768px bằng giá trị md bạn muốn */
+    gap: 1.5px;
+  }
+}
+
+td {
+  width: calc(100% / 7);
+  display: block;
+}
+
+.test_1 {
+  display: block;
+}
+
+.test_1 th {
+  width: calc(100% / 7);
+  display: inline-block;
+}
+
+.rdp-today-color {
+  background-color: red;
+}
+
+/* .rdp-button_previous {
+  display: none;
+}
+.rdp-button_next {
+  display: none;
+} */

@@ -3,7 +3,7 @@ import { CardComponent } from "@/components/CardComponent";
 const LunarCalendar = () => {
   return (
     <div>
-      <div className="px-16 max-lg:p-1">
+      <div className="px-16 max-lg:p-4">
         <div className="text-[#111111] font-bold text-[32px] mt-12">
           Lịch Âm Tháng 9/2024
         </div>
