@@ -1,3 +1,4 @@
+import { iconZodiacData } from "@/app/zodiac/iconZodiac";
 import { iconZodiac } from "@/assets/iconZodiac/iconZodiac";
 import { images } from "@/assets/image";
 import { CardComponent } from "@/components/CardComponent";
@@ -11,29 +12,9 @@ const Zodiac = () => {
           Cung hoàng đạo
         </div>
         <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
-          <Image src={iconZodiac.aries} alt="one" />
-
-          <Image src={iconZodiac.taurus} alt="two" />
-
-          <Image src={iconZodiac.gemini} alt="two" />
-
-          <Image src={iconZodiac.cancer} alt="two" />
-
-          <Image src={iconZodiac.leo} alt="one" />
-
-          <Image src={iconZodiac.virgo} alt="two" />
-
-          <Image src={iconZodiac.libra} alt="two" />
-
-          <Image src={iconZodiac.scorpio} alt="two" />
-
-          <Image src={iconZodiac.sagittarius} alt="one" />
-
-          <Image src={iconZodiac.capricorn} alt="two" />
-
-          <Image src={iconZodiac.aquarius} alt="two" />
-
-          <Image src={iconZodiac.pisces} alt="two" />
+          {iconZodiacData.map((item) => (
+            <Image alt={`${item.id}`} src={item.image} />
+          ))}
         </div>
         <CardComponent title="Bạch Dương" titlePosition="left" noBorder>
           <div className="p-[10px]">

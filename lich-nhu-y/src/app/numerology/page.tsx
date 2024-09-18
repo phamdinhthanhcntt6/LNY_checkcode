@@ -1,3 +1,4 @@
+import { iconNumerologyData } from "@/app/numerology/iconNumerology";
 import { iconNumerology } from "@/assets/iconNumerology/iconNumerology";
 import { images } from "@/assets/image";
 import { CardComponent } from "@/components/CardComponent";
@@ -11,29 +12,9 @@ const Numerology = () => {
           Thần số học
         </div>
         <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
-          <Image src={iconNumerology.one} alt="one" />
-
-          <Image src={iconNumerology.two} alt="two" />
-
-          <Image src={iconNumerology.three} alt="three" />
-
-          <Image src={iconNumerology.four} alt="four" />
-
-          <Image src={iconNumerology.five} alt="five" />
-
-          <Image src={iconNumerology.six} alt="six" />
-
-          <Image src={iconNumerology.seven} alt="seven" />
-
-          <Image src={iconNumerology.eight} alt="eight" />
-
-          <Image src={iconNumerology.nine} alt="nine" />
-
-          <Image src={iconNumerology.eleven} alt="eleven" />
-
-          <Image src={iconNumerology.twenty_two} alt="twenty-two" />
-
-          <Image src={iconNumerology.thirty_three} alt="thirty-three" />
+          {iconNumerologyData.map((item) => (
+            <Image alt={`${item.id}`} src={item.image} />
+          ))}
         </div>
         <CardComponent
           title="Số 1 : Nhà Lãnh Đạo"
