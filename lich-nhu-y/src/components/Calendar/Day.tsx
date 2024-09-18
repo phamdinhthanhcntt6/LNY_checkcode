@@ -1,10 +1,11 @@
 "use client";
 
-import { handleDayTypeColor, nameThu } from "@/libs/utils";
-import { getLunarDayInfo, solar2Lunar } from "@lich-nhu-y/lunar";
-import { get } from "http";
-import { CalendarDay, Modifiers } from "react-day-picker";
+import { getLunarDayInfoFormatted } from "@/libs/utils";
+// import { handleDayTypeColor } from "@/libs/utils";
+// import { getLunarDayInfo, solar2Lunar } from "@lich-nhu-y/lunar";
 import moment from "moment";
+import { useMemo } from "react";
+import { CalendarDay, Modifiers } from "react-day-picker";
 /**
  * Render the gridcell of a day in the calendar and handle the interaction and
  * the focus with they day.
@@ -25,15 +26,17 @@ export function Day(
 ) {
   const { day, modifiers, ...tdProps } = props;
 
+  const lunarDayInfo = useMemo(() => getLunarDayInfoFormatted(), []);
+
   const solarDate = `${day.date.getDate()}/${
     day.date.getMonth() + 1
   }/${day.date.getFullYear()}`;
 
   const colorDayType = (day: string) => {
-    if (day) {
-      const color = handleDayTypeColor(String(getLunarDayInfo(day)!.day_type)!);
-      return color;
-    }
+    // if (day) {
+    //   const color = handleDayTypeColor(String(getLunarDayInfo(day)!.day_type)!);
+    //   return color;
+    // }
   };
 
   function tinhNgayTrongTuan(ngay: string): string {
@@ -42,7 +45,10 @@ export function Day(
     return thu;
   }
 
-  const lunarDate = solar2Lunar(String(solarDate), ["DD/MM/YYYY"]);
+  // const lunarDate = solar2Lunar(String(solarDate), ["DD/MM/YYYY"]);
+
+  console.log(">>", day);
+  console.log("object >>>", modifiers);
 
   return (
     <td
@@ -76,10 +82,11 @@ export function Day(
           </div>
           <div className="flex flex-col items-center text-[13px] max-xl:p-0">
             <div className="max-md:text-[10px]">
-              {lunarDate?.date.substring(0, lunarDate.date.indexOf("/"))}
+              {/* {lunarDate?.date.substring(0, lunarDate.date.indexOf("/"))} */}
+              1
             </div>
             <div className="text-nowrap max-md:text-[9px]">
-              {getLunarDayInfo(day.date.toString())?.day_stem_branch}
+              {/* {getLunarDayInfo(day.date.toString())?.day_stem_branch} */}1
             </div>
           </div>
         </>
