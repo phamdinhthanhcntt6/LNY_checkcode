@@ -38,8 +38,8 @@ export const nameThu = (thu: string): string | undefined => {
   return daysOfWeek[thu];
 };
 
-export const getLunarDayInfoFormatted = () => {
-  const lunarDay = getLunarDayInfo(moment().format("YYYY-MM-DD"));
+export const getLunarDayInfoFormatted = (date: string) => {
+  const lunarDay = getLunarDayInfo(date);
   const lunarDate = get(lunarDay, "lunar_date");
   const solarDate = get(lunarDay, "date");
 

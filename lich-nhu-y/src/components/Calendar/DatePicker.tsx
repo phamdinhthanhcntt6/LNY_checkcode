@@ -6,8 +6,11 @@ import { Weekdays } from "./Weekdays";
 import { MonthCaption } from "./MonthCaption";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
+import { useState } from "react";
 
 export const DatePicker = () => {
+  const [selected, setSelected] = useState<Date>();
+
   return (
     <div className="p-6 max-md:p-0">
       <DayPicker

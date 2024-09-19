@@ -1,11 +1,28 @@
+"use client";
+
 import DatePicker from "@/components/Calendar/DatePicker";
 import { CardComponent } from "@/components/CardComponent";
 import { getLunarDayInfoFormatted, handleDayType, nameThu } from "@/libs/utils";
+import { useCalendarStore } from "@/zustand/calendarStore";
+import { getLunarDayInfo } from "@lich-nhu-y/lunar";
 import { get, isEmpty } from "lodash";
 import { useMemo } from "react";
 
 export const Calendar = () => {
-  const lunarDayInfo = useMemo(() => getLunarDayInfoFormatted(), []);
+  const daySelected = useCalendarStore((state) => state.daySelected);
+
+  const lunarDayInfo = useMemo(
+    () => getLunarDayInfoFormatted(daySelected),
+    [daySelected]
+  );
+
+  const colorDayType = (day: string) => {
+    return day === "NORMAL"
+      ? "border-[#D9D9D9] text-[#D9D9D9]"
+      : day === "GOOD"
+      ? "border-[#28A521] text-[#28A521]"
+      : "border-[#E83D3D] text-[#E83D3D]";
+  };
 
   return (
     <CardComponent className="grid grid-cols-11 gap-4 mt-12 border border-[#111111]  bg-white w-full max-lg:border-none max-lg:mt-0 max-md:p-1 max-xl:grid-cols-1">
@@ -21,7 +38,11 @@ export const Calendar = () => {
             <div className="text-sm text-[#111111] leading-[48px] font-semibold">
               Tháng {get(lunarDayInfo, "monthSolar")}, {lunarDayInfo.yearSolar}
             </div>
-            <div className="border border-[#28A521] text-[#28A521] w-max p-2 mx-auto rounded-3xl font-medium text-sm px-8">
+            <div
+              className={`border ${colorDayType(
+                lunarDayInfo.dayType
+              )}  w-max p-2 mx-auto rounded-3xl font-medium text-sm px-8`}
+            >
               {handleDayType(lunarDayInfo.dayType)}
             </div>
             <div className="text-sm text-[#111111] leading-[22px] font-semibold mx-auto mt-8 w-full">

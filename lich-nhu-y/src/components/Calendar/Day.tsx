@@ -1,5 +1,6 @@
 "use client";
 
+import { useCalendarStore } from "@/zustand/calendarStore";
 import { getLunarDayInfo, solar2Lunar } from "@lich-nhu-y/lunar";
 // import { getLunarDayInfo, solar2Lunar } from "@lich-nhu-y/lunar";
 import moment from "moment";
@@ -45,18 +46,26 @@ export function Day(
 
   const lunarDate = solar2Lunar(String(solarDate), ["DD/MM/YYYY"]);
 
+  const { daySelected, updateDaySelected } = useCalendarStore();
+
   return (
-    <td
-      {...tdProps}
-      align="left"
-      className={`text-lg text-[#111111] font-bold ${
-        day.outside ? "" : "bg-[#F2F4F7]"
-      } p-2 max-md:p-1 rounded-lg max-md:py-0`}
-    >
+    <td {...tdProps}>
       {day.outside ? (
-        ""
+        <div className=""></div>
       ) : (
-        <>
+        <div
+          onClick={() => {
+            updateDaySelected(
+              moment(day.date, "DD/MM/YYYY").format("YYYY-MM-DD")
+            );
+          }}
+          className={`text-lg text-[#111111] font-bold ${
+            day.outside ? "" : "bg-[#F2F4F7]"
+          } p-2 max-md:p-1 rounded-lg max-md:py-0 ${
+            moment(day.date, "DD/MM/YYYY").format("YYYY-MM-DD") ===
+              daySelected && "shadow-inset-red bg-[#FFEAE6]"
+          } `}
+        >
           <div className="flex flex-row items-center w-full gap-[10px]">
             <div
               className={` text-lg font-bold  max-md:text-sm ${
@@ -80,7 +89,7 @@ export function Day(
               {getLunarDayInfo(day.date.toString())?.day_stem_branch}
             </div>
           </div>
-        </>
+        </div>
       )}
     </td>
   );

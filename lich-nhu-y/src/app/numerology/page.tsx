@@ -1,7 +1,6 @@
-import { iconNumerologyData } from "@/app/numerology/iconNumerology";
-import { iconNumerology } from "@/assets/iconNumerology/iconNumerology";
 import { images } from "@/assets/image";
 import { CardComponent } from "@/components/CardComponent";
+import IconNumerology from "@/components/IconNumerology";
 import Image from "next/image";
 
 const Numerology = () => {
@@ -11,11 +10,7 @@ const Numerology = () => {
         <div className="text-[#111111] font-bold text-[32px] mb-6 mt-12">
           Thần số học
         </div>
-        <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
-          {iconNumerologyData.map((item) => (
-            <Image alt={`${item.id}`} src={item.image} />
-          ))}
-        </div>
+        <IconNumerology />
         <CardComponent
           title="Số 1 : Nhà Lãnh Đạo"
           noBorder
@@ -23,10 +18,8 @@ const Numerology = () => {
         >
           <div className="p-[10px]">
             <div className="h-[542px] max-md:h-[350px] overflow-y-auto px-[34px] scrollbar pt-[37px] pb-6 max-lg:px-1">
-              {/* Content */}
               <div></div>
             </div>
-            {/* Footer Card*/}
             <div className="px-[37px] mb-[39px] max-lg:p-1 w-full">
               <div className="border h-0 w-full border-dashed border-[#111111] mb-[30px]" />
               <div className="justify-between w-full flex flex-row max-lg:flex-col">
