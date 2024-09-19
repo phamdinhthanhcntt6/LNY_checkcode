@@ -7,7 +7,7 @@ import { Weekdays } from "./Weekdays";
 
 export const DatePicker = () => {
   return (
-    <div className="p-6 max-md:p-0">
+    <div className="p-8 max-md:p-0">
       <DayPicker
         mode="single"
         locale={vi}

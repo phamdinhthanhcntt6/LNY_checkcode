@@ -1,7 +1,7 @@
 "use client";
 
 import { icons } from "@/assets/icon";
-import { CardComponent } from "@/components/CardComponent/index";
+import { CardComponent } from "@/components/CardComponent";
 import { solar2Lunar } from "@lich-nhu-y/lunar";
 import moment from "moment";
 import Image from "next/image";

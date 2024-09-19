@@ -68,7 +68,7 @@ export function Day(
         >
           <div className="flex flex-row items-center w-full gap-[10px] font-bold max-lg:-mt-2 ">
             <div
-              className={` text-lg font-bold  max-md:text-sm lg:-mt-2  ${
+              className={` text-lg font-bold max-md:text-sm lg:-mt-2  ${
                 isSunday(day.date) ? "text-[#FD5B3A]" : "text-[#111111]"
               }`}
             >

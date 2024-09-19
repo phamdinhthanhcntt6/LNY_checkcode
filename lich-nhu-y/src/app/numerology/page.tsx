@@ -1,6 +1,6 @@
 import { images } from "@/assets/image";
 import { ButtonDownload } from "@/components/ButtonDownload";
-import { CardComponent } from "@/components/CardComponent/index";
+import { CardComponent } from "@/components/CardComponent";
 import IconNumerology from "@/components/IconNumerology";
 import Image from "next/image";
 
