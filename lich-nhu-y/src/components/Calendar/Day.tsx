@@ -51,7 +51,7 @@ export function Day(
   return (
     <td {...tdProps}>
       {day.outside ? (
-        <div className=""></div>
+        ""
       ) : (
         <div
           onClick={() => {

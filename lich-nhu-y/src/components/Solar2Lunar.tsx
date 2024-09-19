@@ -3,6 +3,7 @@
 import { icons } from "@/assets/icon";
 import { CardComponent } from "@/components/CardComponent";
 import { solar2Lunar } from "@lich-nhu-y/lunar";
+import moment from "moment";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -22,7 +23,15 @@ const Solar2Lunar = () => {
 
   const handleSolar2Lunar = (solarDay: number | string) => {
     const res = solar2Lunar(String(solarDay), ["DD/MM/YYYY", "YYYY/MM/DD"]);
+    console.log(res);
     setResult(res);
+  };
+
+  console.log(`Dương: ${value}`);
+
+  const handle1 = (value: string | undefined) => {
+    handleSolar2Lunar(value!.trim());
+    setValue(`Dương: ${moment(value, "YYYY-MM-DD").format("DD/MM/YYYY")}`);
   };
 
   return (
@@ -40,9 +49,8 @@ const Solar2Lunar = () => {
           } items-center gap-[14px] max-md:gap-0`}
         >
           <input
-            type="date"
+            type={result ? "text" : "date"}
             disabled={result ? true : false}
-            // value={!result ? `Duong: ${value}` : ""}
             value={value}
             onChange={handleChange}
             placeholder="dd/mm/yyyy"
@@ -52,23 +60,12 @@ const Solar2Lunar = () => {
             name="result"
           />
 
-          {/* <input
-            type="date"
-            // disabled={result ? true : false}
-            value={result ? `Duong: ${value}` : ""}
-            placeholder="dd/mm/yyyy"
-            onChange={handleChange}
-            className={`py-[19px] rounded-2xl mt-2 border border-[#111111] mb-6 px-6  w-2/5 text-sm text-[#111111] font-bold flex-1 ${
-              result ?? "hidden"
-            }`}
-            name="am1"
-          /> */}
-
           <Image
             src={icons.arrow}
             alt="arrow"
             className={`${result ?? "hidden"} mb-3 max-md:rotate-90 h-2`}
           />
+
           <input
             disabled
             value={result ? `Âm: ${result.date}` : ""}
@@ -82,10 +79,7 @@ const Solar2Lunar = () => {
         <button
           className="bg-[#111111] text-white w-full py-[19px] rounded-2xl font-bold text-sm"
           onClick={() => {
-            value &&
-              (!result
-                ? handleSolar2Lunar(value!.trim())
-                : setResult(undefined));
+            value && (!result ? handle1(value) : setResult(undefined));
           }}
         >
           {result ? "Chọn ngày khác" : "Chuyển đổi"}
