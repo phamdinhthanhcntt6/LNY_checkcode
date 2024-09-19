@@ -29,7 +29,7 @@ const Solar2Lunar = () => {
 
   console.log(`Dương: ${value}`);
 
-  const handle1 = (value: string | undefined) => {
+  const handleValue = (value: string | undefined) => {
     handleSolar2Lunar(value!.trim());
     setValue(`Dương: ${moment(value, "YYYY-MM-DD").format("DD/MM/YYYY")}`);
   };
@@ -79,7 +79,7 @@ const Solar2Lunar = () => {
         <button
           className="bg-[#111111] text-white w-full py-[19px] rounded-2xl font-bold text-sm"
           onClick={() => {
-            value && (!result ? handle1(value) : setResult(undefined));
+            value && (!result ? handleValue(value) : setResult(undefined));
           }}
         >
           {result ? "Chọn ngày khác" : "Chuyển đổi"}
