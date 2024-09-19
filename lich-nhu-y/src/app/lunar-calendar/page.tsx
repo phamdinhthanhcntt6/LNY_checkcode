@@ -1,4 +1,4 @@
-import { CardComponent } from "@/components/CardComponent";
+import { CardComponent } from "@/components/CardComponent/index";
 
 const LunarCalendar = () => {
   return (
@@ -13,39 +13,42 @@ const LunarCalendar = () => {
               title="Lịch âm"
               className="text-center flex flex-col"
             >
-              <div className="text-sm text-[#11111] font-medium">
-                Dương lịch
+              <div className="py-6">
+                <div className="text-sm text-[#11111] font-medium">
+                  Dương lịch
+                </div>
+                <div className="text-[#111111] text-sm font-medium">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+                  dicta rem dolor, quam ducimus ut voluptate, fugit sit
+                  quibusdam voluptatibus error hic eligendi, a sunt dolorum nisi
+                  autem corporis aliquid. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Neque dicta rem dolor, quam ducimus ut
+                  voluptate, fugit sit quibusdam voluptatibus error hic
+                  eligendi, a sunt dolorum nisi autem corporis aliquid. Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit. Neque dicta
+                  rem dolor, quam ducimus ut voluptate, fugit sit quibusdam
+                  voluptatibus error hic eligendi, a sunt dolorum nisi autem
+                  corporis aliquid. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Neque dicta rem dolor, quam ducimus ut
+                  voluptate, fugit sit quibusdam voluptatibus error hic
+                  eligendi, a sunt dolorum nisi autem corporis aliquid. Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit. Neque dicta
+                  rem dolor, quam ducimus ut voluptate, fugit sit quibusdam
+                  voluptatibus error hic eligendi, a sunt dolorum nisi autem
+                  corporis aliquid.
+                </div>
+                <button className="text-[#111111] text-sm font-medium border border-[#111111] py-2 px-4 rounded-3xl mt-6">
+                  Xem thêm
+                </button>
               </div>
-              <div className="text-[#111111] text-sm font-medium">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                dicta rem dolor, quam ducimus ut voluptate, fugit sit quibusdam
-                voluptatibus error hic eligendi, a sunt dolorum nisi autem
-                corporis aliquid. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Neque dicta rem dolor, quam ducimus ut
-                voluptate, fugit sit quibusdam voluptatibus error hic eligendi,
-                a sunt dolorum nisi autem corporis aliquid. Lorem ipsum dolor
-                sit amet consectetur adipisicing elit. Neque dicta rem dolor,
-                quam ducimus ut voluptate, fugit sit quibusdam voluptatibus
-                error hic eligendi, a sunt dolorum nisi autem corporis aliquid.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                dicta rem dolor, quam ducimus ut voluptate, fugit sit quibusdam
-                voluptatibus error hic eligendi, a sunt dolorum nisi autem
-                corporis aliquid. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Neque dicta rem dolor, quam ducimus ut
-                voluptate, fugit sit quibusdam voluptatibus error hic eligendi,
-                a sunt dolorum nisi autem corporis aliquid.
-              </div>
-              <button className="text-[#111111] text-sm font-medium border border-[#111111] py-2 px-4 rounded-3xl my-6">
-                Xem thêm
-              </button>
             </CardComponent>
             <CardComponent
               title="Những ngày Khai Trương đẹp trong tháng 9 năm 2024"
               className="flex flex-col"
             >
-              <div className="p-[10px]">
+              <div className="">
                 <div className="text-sm text-[#111111] font-medium scrollbar overflow-y-auto h-[550px] px-[10px]">
-                  <ul className="list-disc p-8">
+                  <ul className="list-disc p-6">
                     <li>
                       Chủ Nhật, Ngày 1 tháng 9 năm 2024 (Âm lịch: 29/7) - Kim
                       Quỹ Hoàng Đạo

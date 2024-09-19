@@ -68,7 +68,7 @@ export function Day(
         >
           <div className="flex flex-row items-center w-full gap-[10px] font-bold max-lg:-mt-2 ">
             <div
-              className={` text-lg font-bold  max-md:text-sm lg:-mt-2 ${
+              className={` text-lg font-bold  max-md:text-sm lg:-mt-2  ${
                 isSunday(day.date) ? "text-[#FD5B3A]" : "text-[#111111]"
               }`}
             >
@@ -79,7 +79,7 @@ export function Day(
          `}
             />
           </div>
-          <div className="flex flex-col items-center text-[13px] max-xl:p-0">
+          <div className="flex flex-col items-center text-[13px] max-xl:p-0 max-md:-mt-2">
             <div className="max-md:text-[10px]">{lunarDayInfo.dayLunar}</div>
             <div className="text-nowrap max-md:text-[8px] -mt-3">
               {get(lunarDayInfo.lunarDay, "day_stem_branch")}

@@ -1,4 +1,4 @@
-import { CardComponent } from "@/components/CardComponent";
+import { CardComponent } from "@/components/CardComponent/index";
 
 interface ModalProps {
   isOpen: boolean;

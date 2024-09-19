@@ -1,5 +1,6 @@
 import { images } from "@/assets/image";
-import { CardComponent } from "@/components/CardComponent";
+import { ButtonDownload } from "@/components/ButtonDownload";
+import { CardComponent } from "@/components/CardComponent/index";
 import IconZodiac from "@/components/IconZodiac";
 import Image from "next/image";
 
@@ -23,40 +24,25 @@ const Zodiac = () => {
                   <div className="uppercase text-base text-[#111111] font-extrabold">
                     Người nổi tiếng cung bạch dương
                   </div>
-                  <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar mt-6">
+                  <div className="mb-[38px] flex gap-12 overflow-x-auto flex-nowrap hide-scrollbar mt-6">
                     <div className="flex flex-col items-center">
-                      <Image
-                        alt=""
-                        src={images.avatar}
-                        className="w-[66px] h-[66px]"
-                      />
-                      <div>Name</div>
+                      <Image alt="" src={images.avatar} className="w-18 h-18" />
+                      <div className="mt-2 text-[13px] text-[#111111] font-medium">
+                        Name
+                      </div>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Image
-                        alt=""
-                        src={images.avatar}
-                        className="w-[66px] h-[66px]"
-                      />
-                      <div>Name</div>
+                      <Image alt="" src={images.avatar} className="w-18 h-18" />
+                      <div className="mt-2 text-[13px] text-[#111111] font-medium">
+                        Name
+                      </div>
                     </div>
                   </div>
                 </div>
-                <CardComponent className="px-[20px] py-4 max-lg:mr-0 max-lg:mt-4 w-max">
-                  <div className="text-center flex flex-col items-center">
-                    <div className="uppercase text-base text-[#111111] font-extrabold mb-6">
-                      Xem cung hoàng đạo của bạn
-                    </div>
-                    <div className="block w-full bg-black rounded-2xl">
-                      <button className="py-[19px] px-2  text-center w-max items-center">
-                        <div className="font-bold text-sm text-white leading-[18px] flex flex-row mx-auto">
-                          Tải ứng dụng
-                          <span className="uppercase ml-1">Lịch như ý</span>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-                </CardComponent>
+                <ButtonDownload
+                  className="px-[20px] max-lg:mr-0 max-lg:mt-4 w-max py-6"
+                  title="Xem cung hoàng đạo của bạn"
+                />
               </div>
             </div>
           </div>
