@@ -25,17 +25,6 @@ export const handleDayType = (dayType: string): string | undefined => {
   return dayTypes[dayType];
 };
 
-export const handleDayTypeColor = (dayType: string) => {
-  switch (dayType) {
-    case "GOOD":
-      return "green";
-    case "BAD":
-      return "red";
-    default:
-      return "gray";
-  }
-};
-
 export const nameThu = (thu: string): string | undefined => {
   const daysOfWeek: { [key: string]: string } = {
     Monday: "Thứ hai",
@@ -49,8 +38,8 @@ export const nameThu = (thu: string): string | undefined => {
   return daysOfWeek[thu];
 };
 
-export const getLunarDayInfoFormatted = () => {
-  const lunarDay = getLunarDayInfo(moment().format("YYYY-MM-DD"));
+export const getLunarDayInfoFormatted = (date: string) => {
+  const lunarDay = getLunarDayInfo(date);
   const lunarDate = get(lunarDay, "lunar_date");
   const solarDate = get(lunarDay, "date");
 

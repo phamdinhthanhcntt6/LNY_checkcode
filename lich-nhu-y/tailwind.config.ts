@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      boxShadow: {
+        "inset-red": "inset 0 0 0 1px #FD5B3A",
+      },
     },
   },
   plugins: [],

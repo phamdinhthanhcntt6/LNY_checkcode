@@ -1,7 +1,6 @@
-import { iconZodiacData } from "@/app/zodiac/iconZodiac";
-import { iconZodiac } from "@/assets/iconZodiac/iconZodiac";
 import { images } from "@/assets/image";
 import { CardComponent } from "@/components/CardComponent";
+import IconZodiac from "@/components/IconZodiac";
 import Image from "next/image";
 
 const Zodiac = () => {
@@ -11,11 +10,7 @@ const Zodiac = () => {
         <div className="text-[#111111] font-bold text-[32px] mb-6 mt-12">
           Cung hoàng đạo
         </div>
-        <div className="mb-[38px] flex gap-4 overflow-x-auto flex-nowrap hide-scrollbar">
-          {iconZodiacData.map((item) => (
-            <Image alt={`${item.id}`} src={item.image} />
-          ))}
-        </div>
+        <IconZodiac />
         <CardComponent title="Bạch Dương" titlePosition="left" noBorder>
           <div className="p-[10px]">
             <div className="h-[542px] max-md:h-[350px] overflow-y-auto px-[34px] scrollbar pt-[37px] pb-6 max-lg:px-1">
