@@ -1,3 +1,5 @@
+"use client";
+
 import { CalendarMonth } from "react-day-picker";
 
 /**
@@ -14,7 +16,7 @@ export function MonthCaption(
     displayIndex?: number;
   } & JSX.IntrinsicElements["div"]
 ) {
-  const { calendarMonth, displayIndex, ...divProps } = props;
+  const { ...divProps } = props;
   return (
     <div className="flex flex-row justify-between mb-4">
       <div {...divProps} className="text-lg font-bold text-[#111111]"></div>

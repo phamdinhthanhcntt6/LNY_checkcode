@@ -4,7 +4,6 @@ import DatePicker from "@/components/Calendar/DatePicker";
 import { CardComponent } from "@/components/CardComponent";
 import { getLunarDayInfoFormatted, handleDayType, nameThu } from "@/libs/utils";
 import { useCalendarStore } from "@/zustand/calendarStore";
-import { getLunarDayInfo } from "@lich-nhu-y/lunar";
 import { get, isEmpty } from "lodash";
 import { useMemo } from "react";
 

@@ -26,9 +26,14 @@ const Solar2Lunar = () => {
     setResult(res);
   };
 
-  const handleValue = (value: string | undefined) => {
-    handleSolar2Lunar(value!.trim());
+  const handleChangeSolar2Lunar = (value: string | undefined) => {
+    handleSolar2Lunar(value!);
     setValue(`Dương: ${moment(value, "YYYY-MM-DD").format("DD/MM/YYYY")}`);
+  };
+
+  const handleChangeDifferentDay = (value: string | undefined) => {
+    setValue(value);
+    setResult(undefined);
   };
 
   return (
@@ -37,7 +42,7 @@ const Solar2Lunar = () => {
       className="col-span-1 max-xl:col-span-2"
     >
       <div className={`px-5 py-8 flex flex-col`}>
-        <span className="text-sm text-[#111111] leading-[22px] font-semibold mt-8">
+        <span className="text-sm text-[#111111] leading-[22px] font-semibold">
           {result ? "Kết quả chuyển đổi" : " Chọn ngày dương"}
         </span>
         <div
@@ -52,7 +57,7 @@ const Solar2Lunar = () => {
             onChange={handleChange}
             placeholder="dd/mm/yyyy"
             className={`py-[19px] rounded-2xl mt-2 border max-md:w-full border-[#111111] mb-6 px-6 text-sm text-[#111111] font-bold flex-1 ${
-              result ? "w-max" : "w-full"
+              result ? "w-5/12" : "w-full"
             }`}
             name="result"
           />
@@ -60,14 +65,16 @@ const Solar2Lunar = () => {
           <Image
             src={icons.arrow}
             alt="arrow"
-            className={`${result ?? "hidden"} mb-3 max-md:rotate-90 h-2`}
+            className={`${
+              result ?? "hidden"
+            } mb-3 -mx-2 max-md:rotate-90 h-2 flex-1`}
           />
 
           <input
             disabled
             value={result ? `Âm: ${result.date}` : ""}
             placeholder="dd/mm/yyyy"
-            className={`py-[19px] rounded-2xl mt-2 border border-[#111111] mb-6 px-6 max-md:w-full w-2/5 text-sm text-[#111111] font-bold flex-1 ${
+            className={`py-[19px] rounded-2xl mt-2 border border-[#111111] mb-6 px-6 max-md:w-full w-5/12 text-sm text-[#111111] font-bold flex-1 ${
               result ?? "hidden"
             }`}
             name="am"
@@ -76,7 +83,10 @@ const Solar2Lunar = () => {
         <button
           className="bg-[#111111] text-white w-full py-[19px] rounded-2xl font-bold text-sm"
           onClick={() => {
-            value && (!result ? handleValue(value) : setResult(undefined));
+            value &&
+              (!result && value
+                ? handleChangeSolar2Lunar(value)
+                : handleChangeDifferentDay(value));
           }}
         >
           {result ? "Chọn ngày khác" : "Chuyển đổi"}
