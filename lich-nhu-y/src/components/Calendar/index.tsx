@@ -1,7 +1,7 @@
 "use client";
 
 import DatePicker from "@/components/Calendar/DatePicker";
-import { CardComponent } from "@/components/CardComponent/index";
+import { CardComponent } from "@/components/CardComponent";
 import { getLunarDayInfoFormatted, handleDayType, nameThu } from "@/libs/utils";
 import { useCalendarStore } from "@/zustand/calendarStore";
 import { get, isEmpty } from "lodash";

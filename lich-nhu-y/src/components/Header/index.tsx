@@ -44,7 +44,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="px-16 pt-8 max-lg:px-4 ">
+    <div className="px-16 pt-8 max-lg:px-4">
       <div className="flex flex-row max-md:p-0 justify-between">
         <Link href={"/"}>
           <button className="flex flex-row">

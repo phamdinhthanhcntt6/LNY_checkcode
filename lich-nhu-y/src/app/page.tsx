@@ -1,6 +1,6 @@
 import { images } from "@/assets/image";
 import Calendar from "@/components/Calendar";
-import { CardComponent } from "@/components/CardComponent/index";
+import { CardComponent } from "@/components/CardComponent";
 import DreamDecoding from "@/components/DreamDecoding/index";
 import Solar2Lunar from "@/components/Solar2Lunar/index";
 import Image from "next/image";

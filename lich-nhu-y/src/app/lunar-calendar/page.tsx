@@ -1,4 +1,4 @@
-import { CardComponent } from "@/components/CardComponent/index";
+import { CardComponent } from "@/components/CardComponent";
 
 const LunarCalendar = () => {
   return (
