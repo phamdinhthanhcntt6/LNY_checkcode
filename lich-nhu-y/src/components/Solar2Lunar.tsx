@@ -23,11 +23,8 @@ const Solar2Lunar = () => {
 
   const handleSolar2Lunar = (solarDay: number | string) => {
     const res = solar2Lunar(String(solarDay), ["DD/MM/YYYY", "YYYY/MM/DD"]);
-    console.log(res);
     setResult(res);
   };
-
-  console.log(`Dương: ${value}`);
 
   const handleValue = (value: string | undefined) => {
     handleSolar2Lunar(value!.trim());
