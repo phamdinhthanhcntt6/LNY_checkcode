@@ -1,9 +1,10 @@
 "use client";
 
+import { getLunarDayInfoFormatted } from "@/libs/utils";
 import { useCalendarStore } from "@/zustand/calendarStore";
-import { getLunarDayInfo, solar2Lunar } from "@lich-nhu-y/lunar";
-// import { getLunarDayInfo, solar2Lunar } from "@lich-nhu-y/lunar";
+import { get } from "lodash";
 import moment from "moment";
+import { useMemo } from "react";
 import { CalendarDay, Modifiers } from "react-day-picker";
 /**
  * Render the gridcell of a day in the calendar and handle the interaction and
@@ -25,12 +26,16 @@ export function Day(
 ) {
   const { day, modifiers, ...tdProps } = props;
 
-  const solarDate = `${day.date.getDate()}/${
-    day.date.getMonth() + 1
-  }/${day.date.getFullYear()}`;
+  const { daySelected, updateDaySelected } = useCalendarStore();
 
-  const colorDayType = (day: string) => {
-    const colorType = String(getLunarDayInfo(day)!.day_type)!;
+  const lunarDayInfo = useMemo(
+    () => getLunarDayInfoFormatted(moment(day.date).format("YYYY-MM-DD")),
+    [day.date]
+  );
+
+  const colorDayType = () => {
+    const colorType = lunarDayInfo.dayType || "";
+
     return colorType === "NORMAL"
       ? "bg-[#D9D9D9]"
       : colorType === "GOOD"
@@ -38,18 +43,13 @@ export function Day(
       : "bg-[#E83D3D]";
   };
 
-  function isSunday(ngay: string): boolean {
-    const ngayChuan = moment(ngay, "DD/MM/YYYY");
-    const thu = ngayChuan.format("dddd");
-    return thu === "Sunday";
-  }
-
-  const lunarDate = solar2Lunar(String(solarDate), ["DD/MM/YYYY"]);
-
-  const { daySelected, updateDaySelected } = useCalendarStore();
+  const isSunday = (checkDate: Date): boolean => {
+    const isWeekend = moment(checkDate).day();
+    return isWeekend === 0;
+  };
 
   return (
-    <td {...tdProps}>
+    <td {...tdProps} className="max-md:mb-2">
       {day.outside ? (
         ""
       ) : (
@@ -59,34 +59,30 @@ export function Day(
               moment(day.date, "DD/MM/YYYY").format("YYYY-MM-DD")
             );
           }}
-          className={`text-lg text-[#111111] font-bold ${
+          className={`text-lg text-[#111111] ${
             day.outside ? "" : "bg-[#F2F4F7]"
           } p-2 max-md:p-1 rounded-lg max-md:py-0 ${
             moment(day.date, "DD/MM/YYYY").format("YYYY-MM-DD") ===
-              daySelected && "shadow-inset-red bg-[#FFEAE6]"
-          } `}
+              daySelected && "shadow-inset-red"
+          } ${modifiers.today && "bg-[#FFEAE6] shadow-inset-red"}`}
         >
-          <div className="flex flex-row items-center w-full gap-[10px]">
+          <div className="flex flex-row items-center w-full gap-[10px] font-bold max-lg:-mt-2 ">
             <div
-              className={` text-lg font-bold  max-md:text-sm ${
-                isSunday(solarDate) ? "text-[#FD5B3A]" : "text-[#111111]"
+              className={` text-lg font-bold max-md:text-sm lg:-mt-2  ${
+                isSunday(day.date) ? "text-[#FD5B3A]" : "text-[#111111]"
               }`}
             >
               {day.date.getDate()}
             </div>
             <div
-              className={`w-2 h-2 rounded-full ${colorDayType(
-                day.date.toString()
-              )}
+              className={`w-2 h-2 rounded-full ${colorDayType()}
          `}
             />
           </div>
-          <div className="flex flex-col items-center text-[13px] max-xl:p-0">
-            <div className="max-md:text-[10px]">
-              {lunarDate?.date.substring(0, lunarDate.date.indexOf("/"))}
-            </div>
-            <div className="text-nowrap max-md:text-[9px]">
-              {getLunarDayInfo(day.date.toString())?.day_stem_branch}
+          <div className="flex flex-col items-center text-[13px] max-xl:p-0 max-md:-mt-2">
+            <div className="max-md:text-[10px]">{lunarDayInfo.dayLunar}</div>
+            <div className="text-nowrap max-md:text-[8px] -mt-3">
+              {get(lunarDayInfo.lunarDay, "day_stem_branch")}
             </div>
           </div>
         </div>

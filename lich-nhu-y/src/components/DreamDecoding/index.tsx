@@ -1,7 +1,7 @@
 "use client";
 
-import { CardComponent } from "@/components/CardComponent";
-import Modal from "@/components/Modal";
+import { CardComponent } from "@/components/CardComponent/index";
+import Modal from "@/components/Modal/index";
 import { useState } from "react";
 
 const DreamDecoding = () => {

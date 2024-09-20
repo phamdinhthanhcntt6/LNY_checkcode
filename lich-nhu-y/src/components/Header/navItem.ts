@@ -8,6 +8,7 @@ export const navItem = [
     id: 2,
     name: "Lịch âm",
     path: "/lunar-calendar",
+    more: true,
   },
   {
     id: 3,

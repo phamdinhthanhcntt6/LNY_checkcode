@@ -1,8 +1,8 @@
 import { images } from "@/assets/image";
 import Calendar from "@/components/Calendar";
 import { CardComponent } from "@/components/CardComponent";
-import DreamDecoding from "@/components/DreamDecoding";
-import Solar2Lunar from "@/components/Solar2Lunar";
+import DreamDecoding from "@/components/DreamDecoding/index";
+import Solar2Lunar from "@/components/Solar2Lunar/index";
 import Image from "next/image";
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -38,7 +38,7 @@ const HomePage = () => {
         <div className="text-2xl font-extrabold text-[#111111] mt-8 max-lg:px-4">
           Bài viết
         </div>
-        <div className="grid grid-cols-4 gap-8 mt-[35px] max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 max-lg:px-4">
+        <div className="grid grid-cols-4 gap-8 max-sm:gap-2 mt-[35px] max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-2 max-lg:px-4">
           {array.map((index) => (
             <div className="flex flex-col" key={index}>
               <Image alt="" src={images.image} className="w-full" />

@@ -1,11 +1,11 @@
 "use client";
 
 import { icons } from "@/assets/icon";
-
-import { solar2Lunar } from "@lich-nhu-y/lunar";
-import { useState } from "react";
-import Image from "next/image";
 import { CardComponent } from "@/components/CardComponent";
+import { solar2Lunar } from "@lich-nhu-y/lunar";
+import moment from "moment";
+import Image from "next/image";
+import { useState } from "react";
 
 type resultType = {
   date: string;
@@ -26,13 +26,23 @@ const Solar2Lunar = () => {
     setResult(res);
   };
 
+  const handleChangeSolar2Lunar = (value: string | undefined) => {
+    handleSolar2Lunar(value!);
+    setValue(`Dương: ${moment(value, "YYYY-MM-DD").format("DD/MM/YYYY")}`);
+  };
+
+  const handleChangeDifferentDay = () => {
+    setValue(undefined);
+    setResult(undefined);
+  };
+
   return (
     <CardComponent
       title="Đổi ngày âm dương"
       className="col-span-1 max-xl:col-span-2"
     >
       <div className={`px-5 py-8 flex flex-col`}>
-        <span className="text-sm text-[#111111] leading-[22px] font-semibold mt-8">
+        <span className="text-sm text-[#111111] leading-[22px] font-semibold">
           {result ? "Kết quả chuyển đổi" : " Chọn ngày dương"}
         </span>
         <div
@@ -41,35 +51,23 @@ const Solar2Lunar = () => {
           } items-center gap-[14px] max-md:gap-0`}
         >
           <input
-            type="date"
+            type={result ? "text" : "date"}
             disabled={result ? true : false}
-            // value={!result ? `Duong: ${value}` : ""}
             value={value}
             onChange={handleChange}
             placeholder="dd/mm/yyyy"
             className={`py-[19px] rounded-2xl mt-2 border max-md:w-full border-[#111111] mb-6 px-6 text-sm text-[#111111] font-bold flex-1 ${
-              result ? "w-max" : "w-full"
+              result ? "w-2/5" : "w-full"
             }`}
             name="result"
           />
 
-          {/* <input
-            type="date"
-            // disabled={result ? true : false}
-            value={result ? `Duong: ${value}` : ""}
-            placeholder="dd/mm/yyyy"
-            onChange={handleChange}
-            className={`py-[19px] rounded-2xl mt-2 border border-[#111111] mb-6 px-6  w-2/5 text-sm text-[#111111] font-bold flex-1 ${
-              result ?? "hidden"
-            }`}
-            name="am1"
-          /> */}
-
           <Image
             src={icons.arrow}
             alt="arrow"
-            className={`${result ?? "hidden"} mb-3 max-md:rotate-90 h-2`}
+            className={`${result ?? "hidden"} mb-3 -mx-2 max-md:rotate-90 h-2`}
           />
+
           <input
             disabled
             value={result ? `Âm: ${result.date}` : ""}
@@ -85,8 +83,8 @@ const Solar2Lunar = () => {
           onClick={() => {
             value &&
               (!result
-                ? handleSolar2Lunar(value!.trim())
-                : setResult(undefined));
+                ? value && handleChangeSolar2Lunar(value)
+                : handleChangeDifferentDay());
           }}
         >
           {result ? "Chọn ngày khác" : "Chuyển đổi"}

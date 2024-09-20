@@ -1,50 +1,23 @@
 "use client";
 
+import { icons } from "@/assets/icon";
+import { images } from "@/assets/image";
 import { navItem } from "@/components/Header/navItem";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { icons } from "@/assets/icon";
-import { images } from "@/assets/image";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [isVisble, setIsVisble] = useState(false);
   const pathname = usePathname();
 
-  const MenuMobile = () => {
-    return (
-      <div className={`${!isVisble && "hidden"} lg:hidden bg-transparent`}>
-        <div className="fixed w-screen h-max bg-red-400 border">
-          <div className="flex flex-col gap-3">
-            {navItem.map((item) => (
-              <button
-                className="flex flex-row px-4 py-2 active:underline"
-                key={item.id}
-              >
-                <span
-                  className="font-semibold text-sm text-[#111111]"
-                  key={item.id}
-                >
-                  {item.name}
-                </span>
-                {/* {item.more && (
-                  <Image
-                    src={images.arrowdown}
-                    className="w-3 h-3 ml-[3px] mt-1"
-                    alt=""
-                  />
-                )} */}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  };
+  useEffect(() => {
+    setIsVisble(false);
+  }, [pathname]);
 
   return (
-    <div className="px-16 pt-8 max-lg:px-4 ">
+    <div className="px-16 pt-8 max-lg:px-4">
       <div className="flex flex-row max-md:p-0 justify-between">
         <Link href={"/"}>
           <button className="flex flex-row">
@@ -67,13 +40,13 @@ export const Header = () => {
                 >
                   {item.name}
                 </span>
-                {/* {item.more && (
+                {item.more && (
                   <Image
                     alt=""
-                    src={images.arrowdown}
+                    src={icons.arrowDown}
                     className="w-3 h-3 ml-[3px] mt-1"
                   />
-                )} */}
+                )}
               </Link>
             ))}
           </div>
@@ -101,8 +74,34 @@ export const Header = () => {
             <Image alt="menu" src={icons.menu} />
           </button>
         </div>
+        <div
+          className={`lg:hidden absolute w-full top-20 right-0 bg-[#F2F4F7] py-[22px] px-6 ${
+            isVisble ? "block" : "hidden"
+          }`}
+        >
+          {navItem.map((item, index) => (
+            <>
+              <Link
+                href={`${item.path}`}
+                className={`flex flex-row  rounded-full px-4 py-2 w-full ${
+                  index < navItem.length - 1 &&
+                  "border-dashed border-b border-[#DCDFE2]"
+                } ${item.path === pathname && ""}`}
+                key={item.id}
+              >
+                <div
+                  className={`font-semibold text-sm w-full text-[#111111] text-center ${
+                    item.path === pathname && "text-[#FD5B3A]"
+                  }`}
+                  key={item.id}
+                >
+                  {item.name}
+                </div>
+              </Link>
+            </>
+          ))}
+        </div>
       </div>
-      <MenuMobile />
     </div>
   );
 };
