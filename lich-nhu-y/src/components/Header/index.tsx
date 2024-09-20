@@ -75,7 +75,7 @@ export const Header = () => {
           </button>
         </div>
         <div
-          className={`lg:hidden absolute w-full top-20 right-0 bg-[#F2F4F7] py-[22px] px-6 ${
+          className={`lg:hidden absolute w-full top-20 right-0 bg-[#F2F4F7] py-4 px-6 ${
             isVisble ? "block" : "hidden"
           }`}
         >

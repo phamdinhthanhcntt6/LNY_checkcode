@@ -43,10 +43,7 @@ const Numerology = () => {
                     </div>
                   </div>
                 </div>
-                <ButtonDownload
-                  className="px-[20px] max-lg:mr-0 max-lg:mt-4 w-max py-6"
-                  title="Xem thần số học của bạn"
-                />
+                <ButtonDownload title="Xem thần số học của bạn" />
               </div>
             </div>
           </div>
