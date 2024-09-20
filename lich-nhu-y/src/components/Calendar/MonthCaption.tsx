@@ -11,9 +11,9 @@ import { CalendarMonth } from "react-day-picker";
 export function MonthCaption(
   props: {
     /** The month where the grid is displayed. */
-    calendarMonth?: CalendarMonth;
+    calendarMonth: CalendarMonth;
     /** The index where this month is displayed. */
-    displayIndex?: number;
+    displayIndex: number;
   } & JSX.IntrinsicElements["div"]
 ) {
   const { ...divProps } = props;

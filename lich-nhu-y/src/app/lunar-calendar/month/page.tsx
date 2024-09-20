@@ -1,10 +1,10 @@
 import { CardComponent } from "@/components/CardComponent";
 
-const LunarCalendar = () => {
+const LunarCalendarMonth = () => {
   return (
     <div>
       <div className="px-16 max-lg:p-4">
-        <div className="text-[#111111] font-bold text-[32px] mt-12">
+        <div className="text-[#111111] font-bold text-[32px] mt-12 max-lg:text-2xl">
           Lịch Âm Tháng 9/2024
         </div>
         <div className="w-full mt-6 grid grid-cols-2 grid-flow-col gap-8 mb-24 max-lg:grid-cols-1 max-lg:flex-col max-lg:flex">
@@ -13,7 +13,7 @@ const LunarCalendar = () => {
               title="Lịch âm"
               className="text-center flex flex-col"
             >
-              <div className="py-6">
+              <div className="py-6 px-6">
                 <div className="text-sm text-[#11111] font-medium">
                   Dương lịch
                 </div>
@@ -133,4 +133,4 @@ const LunarCalendar = () => {
     </div>
   );
 };
-export default LunarCalendar;
+export default LunarCalendarMonth;
