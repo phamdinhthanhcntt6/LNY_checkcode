@@ -39,10 +39,7 @@ const Zodiac = () => {
                     </div>
                   </div>
                 </div>
-                <ButtonDownload
-                  className="px-[20px] max-lg:mr-0 max-lg:mt-4 w-max py-6"
-                  title="Xem cung hoàng đạo của bạn"
-                />
+                <ButtonDownload title="Xem cung hoàng đạo của bạn" />
               </div>
             </div>
           </div>
