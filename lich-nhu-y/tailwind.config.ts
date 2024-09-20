@@ -14,6 +14,7 @@ const config: Config = {
       },
       boxShadow: {
         "inset-red": "inset 0 0 0 1px #FD5B3A",
+        "inset-black": "inset 0 0 0 1px #111111",
       },
     },
   },

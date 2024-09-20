@@ -52,13 +52,13 @@ const Solar2Lunar = () => {
         >
           <input
             type={result ? "text" : "date"}
-            disabled={result ? true : false}
+            disabled={result && true}
             value={value}
             onChange={handleChange}
             placeholder="dd/mm/yyyy"
-            className={`py-[19px] rounded-2xl mt-2 border max-md:w-full border-[#111111] mb-6 px-6 text-sm text-[#111111] font-bold flex-1 ${
-              result ? "w-2/5" : "w-full"
-            }`}
+            className={`py-[19px] rounded-2xl mt-2 border max-md:w-full border-[#111111] mb-6 px-6  text-sm text-[#111111] font-bold ${
+              result && "text-center max-2xl:px-1"
+            } flex-1 ${result ? "w-5/12" : "w-full"}`}
             name="result"
           />
 
@@ -72,7 +72,7 @@ const Solar2Lunar = () => {
             disabled
             value={result ? `Âm: ${result.date}` : ""}
             placeholder="dd/mm/yyyy"
-            className={`py-[19px] rounded-2xl mt-2 border border-[#111111] mb-6 px-6 max-md:w-full w-2/5 text-sm text-[#111111] font-bold flex-1 ${
+            className={`py-[19px] rounded-2xl mt-2 border border-[#111111] mb-6 px-6 max-2xl:px-1 max-xl:px-2 max-md:w-full w-5/12 flex-1 text-sm text-[#111111] font-bold text-center ${
               result ?? "hidden"
             }`}
             name="am"

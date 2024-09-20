@@ -24,29 +24,44 @@ export const Header = () => {
             <Image src={images.logoLNY} alt="" className="min-h-8 min-w-40" />
           </button>
         </Link>
-        <div className="flex flex-row max-lg:hidden max-lg:p-1">
-          <div className="flex flex-row gap-6 max-2xl:gap-1 max-xl:gap-0 flex-1">
-            {navItem.map((item) => (
+        <div className={`flex max-lg:p-1`}>
+          <div
+            className={`flex flex-row gap-6 max-2xl:gap-1 max-xl:gap-0 flex-1 max-lg:items-center ${
+              isVisble
+                ? "max-lg:absolute max-lg:flex-col items-center right-0 top-20 max-lg:w-full max-lg:bg-[#F2F4F7] max-lg:py-6 max-lg:px-4"
+                : "max-lg:hidden"
+            }`}
+          >
+            {navItem.map((item, index) => (
               <Link
                 href={`${item.path}`}
-                className={`flex flex-row  rounded-full px-4 py-2  ${
-                  item.path === pathname && "outline-[#111111] outline"
+                className={`flex justify-center px-4 py-2 ${
+                  item.path === pathname && "rounded-full shadow-inset-black"
                 }`}
-                key={item.id}
+                key={index}
               >
-                <span
-                  className="font-semibold text-sm text-[#111111]"
-                  key={item.id}
-                >
-                  {item.name}
-                </span>
-                {item.more && (
-                  <Image
-                    alt=""
-                    src={icons.arrowDown}
-                    className="w-3 h-3 ml-[3px] mt-1"
-                  />
-                )}
+                <div className="flex flex-row w-full">
+                  <div
+                    className="font-semibold text-sm text-[#111111]"
+                    key={item.id}
+                  >
+                    <div
+                      className={`${
+                        item.path === pathname &&
+                        "max-lg:text-[#FD5B3A] font-bold text-sm"
+                      }`}
+                    >
+                      {item.name}
+                    </div>
+                  </div>
+                  {item.more && (
+                    <Image
+                      alt=""
+                      src={icons.arrowDown}
+                      className="w-3 h-3 ml-[3px] mt-1"
+                    />
+                  )}
+                </div>
               </Link>
             ))}
           </div>
@@ -73,33 +88,6 @@ export const Header = () => {
           >
             <Image alt="menu" src={icons.menu} />
           </button>
-        </div>
-        <div
-          className={`lg:hidden absolute w-full top-20 right-0 bg-[#F2F4F7] py-4 px-6 ${
-            isVisble ? "block" : "hidden"
-          }`}
-        >
-          {navItem.map((item, index) => (
-            <>
-              <Link
-                href={`${item.path}`}
-                className={`flex flex-row  rounded-full px-4 py-2 w-full ${
-                  index < navItem.length - 1 &&
-                  "border-dashed border-b border-[#DCDFE2]"
-                } ${item.path === pathname && ""}`}
-                key={item.id}
-              >
-                <div
-                  className={`font-semibold text-sm w-full text-[#111111] text-center ${
-                    item.path === pathname && "text-[#FD5B3A]"
-                  }`}
-                  key={item.id}
-                >
-                  {item.name}
-                </div>
-              </Link>
-            </>
-          ))}
         </div>
       </div>
     </div>
