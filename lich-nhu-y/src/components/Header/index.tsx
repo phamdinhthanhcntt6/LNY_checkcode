@@ -1,14 +1,12 @@
 "use client";
 
+import { icons } from "@/assets/icon";
+import { images } from "@/assets/image";
 import { navItem } from "@/components/Header/navItem";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { icons } from "@/assets/icon";
-import { images } from "@/assets/image";
-import { is } from "date-fns/locale";
-import path from "path";
+import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [isVisble, setIsVisble] = useState(false);
@@ -42,13 +40,13 @@ export const Header = () => {
                 >
                   {item.name}
                 </span>
-                {/* {item.more && (
+                {item.more && (
                   <Image
                     alt=""
-                    src={images.arrowdown}
+                    src={icons.arrowDown}
                     className="w-3 h-3 ml-[3px] mt-1"
                   />
-                )} */}
+                )}
               </Link>
             ))}
           </div>
