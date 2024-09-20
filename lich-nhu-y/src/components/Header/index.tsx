@@ -71,6 +71,7 @@ export const Header = () => {
                 item.children && (
                   <button
                     onMouseEnter={() => setOpenDropdown(true)}
+                    onClick={() => setOpenDropdown(!openDropdown)}
                     className={`flex justify-center px-4 py-2 ${
                       isChoosen
                         ? "lg:rounded-full lg:shadow-inset-black"
