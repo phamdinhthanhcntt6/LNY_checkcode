@@ -17,9 +17,9 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col max-lg:mt-4">
           <div className="text-black font-bold text-base">Menu</div>
-          <ul className="list-disc pl-5 lg:mt-4 flex flex-col lg:gap-4">
+          <ul className="list-disc pl-5 mt-4 flex flex-col lg:gap-4">
             <li className="text-sm font-medium text-[#111111]">
               <button className="hover:underline">Giới thiệu</button>
             </li>
@@ -28,7 +28,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col max-lg:mt-4">
           <div className="text-black font-bold text-base">
             Tải ứng dụng Lịch Như Ý
           </div>
