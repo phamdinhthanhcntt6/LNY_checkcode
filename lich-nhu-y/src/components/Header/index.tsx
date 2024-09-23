@@ -149,7 +149,7 @@ export const Header = () => {
                               onMouseLeave={() => setOpenDropdown(false)}
                               className={`${
                                 openDropdown
-                                  ? "absolute top-20 lg:-ml-14 max-lg:-ml-10 flex flex-col w-40 max-lg:w-32 max-lg:top-28 bg-white rounded-3xl border px-4 border-[#111111]"
+                                  ? "absolute top-20 lg:-ml-14 max-lg:-ml-10 flex flex-col w-40 max-lg:w-32 max-lg:top-24 bg-white rounded-3xl border px-4 border-[#111111]"
                                   : "hidden"
                               }`}
                             >
