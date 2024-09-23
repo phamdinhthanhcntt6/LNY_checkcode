@@ -1,4 +1,3 @@
-import { icons } from "@/assets/icon";
 import { images } from "@/assets/image";
 import { ButtonDownload } from "@/components/ButtonDownload";
 import { CardComponent } from "@/components/CardComponent/index";
