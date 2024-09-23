@@ -6,7 +6,6 @@ interface Props {
   children: ReactNode;
   title?: string;
   className?: string;
-  button?: boolean;
   titlePosition?: "center" | "left";
   onClose?: () => void;
   noBorder?: boolean;
@@ -18,7 +17,7 @@ export const CardComponent = (props: Props) => {
   return (
     <div
       className={`bg-[#F2F4F7] rounded-[32px] border border-[#111111]
-          ${noBorder ?? "border-b-[6px] border-r-[6px]"} ${className}`}
+          ${noBorder ?? "shadow-custom-shadow"} ${className}`}
     >
       {title && (
         <div className="flex flex-col bg-white rounded-t-[32px]">
@@ -32,12 +31,6 @@ export const CardComponent = (props: Props) => {
             >
               {title}
             </div>
-            {/* {button && (
-              <div className="flex flex-row gap-2 mr-6">
-                <img src={iconArrow} className="" />
-                <img src={iconArrow} className="rotate-180" />
-              </div>
-            )} */}
             {onClose && (
               <button onClick={onClose}>
                 <Image alt="" src={icons.close} className="w-6 h-6 mr-[15px]" />

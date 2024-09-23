@@ -1,6 +1,6 @@
 "use client";
 
-import { iconZodiacData } from "../../app/zodiac/iconZodiac";
+import { iconZodiacData } from "./iconZodiac";
 import Image from "next/image";
 
 const IconZodiac = () => {

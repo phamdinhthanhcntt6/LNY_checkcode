@@ -7,8 +7,18 @@ export const navItem = [
   {
     id: 2,
     name: "Lịch âm",
-    path: "/lunar-calendar",
-    more: true,
+    children: [
+      {
+        id: 5,
+        name: "Lịch âm tháng",
+        path: "/lunar-calendar/month",
+      },
+      {
+        id: 6,
+        name: "Lịch âm năm",
+        path: "/lunar-calendar/year",
+      },
+    ],
   },
   {
     id: 3,

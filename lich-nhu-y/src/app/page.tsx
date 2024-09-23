@@ -21,7 +21,7 @@ const HomePage = () => {
           <div className="grid grid-cols-3 gap-8 mt-12 max-xl:grid-cols-1 p-[10px]">
             <CardComponent
               title="Xem ngày tốt xấu hôm nay "
-              className="col-span-2 row-span-2 h-full  flex flex-col"
+              className="col-span-2 row-span-2 h-full flex flex-col"
             >
               <div className="text-base py-6 p-[10px]">
                 <div className="h-[550px] max-md:h-[350px] overflow-y-auto px-[34px] scrollbar">
