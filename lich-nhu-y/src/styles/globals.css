@@ -91,6 +91,12 @@ td {
   background-color: red;
 }
 
+.rdp-weekday {
+  @media (max-width: 768px) {
+    font-size: x-small;
+  }
+}
+
 /* .rdp-button_previous {
   display: none;
 }
