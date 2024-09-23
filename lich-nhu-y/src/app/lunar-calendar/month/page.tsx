@@ -13,33 +13,35 @@ const LunarCalendarMonth = () => {
               title="Lịch âm"
               className="text-center flex flex-col"
             >
-              <div className="py-6 px-6">
-                <div className="text-sm text-[#11111] font-medium">
-                  Dương lịch
+              <div className="">
+                <div className="text-sm text-[#111111] font-medium scrollbar overflow-y-auto h-[550px] px-[10px]">
+                  <ul className="p-6">
+                    <>
+                      <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Neque dicta rem dolor, quam ducimus ut voluptate, fugit
+                        sit quibusdam voluptatibus error hic eligendi, a sunt
+                        dolorum nisi autem corporis aliquid. Lorem ipsum dolor
+                        sit amet consectetur adipisicing elit. Neque dicta rem
+                        dolor, quam ducimus ut voluptate, fugit sit quibusdam
+                        voluptatibus error hic eligendi, a sunt dolorum nisi
+                        autem corporis aliquid. Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Neque dicta rem dolor,
+                        quam ducimus ut voluptate, fugit sit quibusdam
+                        voluptatibus error hic eligendi, a sunt dolorum nisi
+                        autem corporis aliquid. Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Neque dicta rem dolor,
+                        quam ducimus ut voluptate, fugit sit quibusdam
+                        voluptatibus error hic eligendi, a sunt dolorum nisi
+                        autem corporis aliquid. Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Neque dicta rem dolor,
+                        quam ducimus ut voluptate, fugit sit quibusdam
+                        voluptatibus error hic eligendi, a sunt dolorum nisi
+                        autem corporis aliquid.
+                      </div>
+                    </>
+                  </ul>
                 </div>
-                <div className="text-[#111111] text-sm font-medium">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                  dicta rem dolor, quam ducimus ut voluptate, fugit sit
-                  quibusdam voluptatibus error hic eligendi, a sunt dolorum nisi
-                  autem corporis aliquid. Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Neque dicta rem dolor, quam ducimus ut
-                  voluptate, fugit sit quibusdam voluptatibus error hic
-                  eligendi, a sunt dolorum nisi autem corporis aliquid. Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Neque dicta
-                  rem dolor, quam ducimus ut voluptate, fugit sit quibusdam
-                  voluptatibus error hic eligendi, a sunt dolorum nisi autem
-                  corporis aliquid. Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Neque dicta rem dolor, quam ducimus ut
-                  voluptate, fugit sit quibusdam voluptatibus error hic
-                  eligendi, a sunt dolorum nisi autem corporis aliquid. Lorem
-                  ipsum dolor sit amet consectetur adipisicing elit. Neque dicta
-                  rem dolor, quam ducimus ut voluptate, fugit sit quibusdam
-                  voluptatibus error hic eligendi, a sunt dolorum nisi autem
-                  corporis aliquid.
-                </div>
-                <button className="text-[#111111] text-sm font-medium border border-[#111111] py-2 px-4 rounded-3xl mt-6">
-                  Xem thêm
-                </button>
               </div>
             </CardComponent>
             <CardComponent
@@ -90,7 +92,6 @@ const LunarCalendarMonth = () => {
               </ul>
             </CardComponent>
             <CardComponent
-              button
               title="Những ngày Nhập Trạch đẹp trong tháng 9 năm 2024"
               className=""
             >
@@ -104,7 +105,6 @@ const LunarCalendarMonth = () => {
               </ul>
             </CardComponent>
             <CardComponent
-              button
               title="Những ngày Cưới Hỏi tốt trong tháng 9 năm 2024"
               className=""
             >
@@ -114,7 +114,6 @@ const LunarCalendarMonth = () => {
               </ul>
             </CardComponent>
             <CardComponent
-              button
               title="Những ngày Xuất Hành đẹp trong tháng 9 năm 2024"
               className=""
             >

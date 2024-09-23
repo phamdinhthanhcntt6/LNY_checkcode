@@ -1,3 +1,4 @@
+import { icons } from "@/assets/icon";
 import { images } from "@/assets/image";
 import { ButtonDownload } from "@/components/ButtonDownload";
 import { CardComponent } from "@/components/CardComponent/index";
@@ -20,7 +21,7 @@ const Zodiac = () => {
             <div className="px-[37px] mb-[39px] max-lg:p-1">
               <div className="border h-0 w-full border-dashed border-[#111111] mb-[30px]" />
               <div className="justify-between w-full flex flex-row max-lg:flex-col">
-                <div className="">
+                <div className="w-full">
                   <div className="uppercase text-base text-[#111111] font-extrabold">
                     Người nổi tiếng cung bạch dương
                   </div>
@@ -35,6 +36,11 @@ const Zodiac = () => {
                       <Image alt="" src={images.avatar} className="w-18 h-18" />
                       <div className="mt-2 text-[13px] text-[#111111] font-medium">
                         Name
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <div className="w-[72px] h-[72px] p-6 bg-white text-center rounded-full text-[20px] text-[#111111] font-medium border border-[#111111] shadow-custom-shadow">
+                        +5
                       </div>
                     </div>
                   </div>

@@ -5,10 +5,10 @@ interface Props {
 
 export const ButtonDownload = (props: Props) => {
   const { className, title } = props;
+
   return (
     <div
-      className={`bg-[#F2F4F7] rounded-[32px] border border-[#111111]
-          border-b-[6px] border-r-[6px] ${className} max-md:w-full px-[20px] max-lg:mr-0 max-lg:mt-4 p-6 w-max lg:mb-6`}
+      className={`bg-[#F2F4F7] rounded-[32px] border border-[#111111] shadow-custom-shadow ${className} max-md:w-full px-[20px] max-lg:mr-0 max-lg:mt-4 p-6 w-max lg:mb-6`}
     >
       <div className="text-center flex flex-col items-center">
         <div className="uppercase text-base text-[#111111] font-extrabold mb-6">

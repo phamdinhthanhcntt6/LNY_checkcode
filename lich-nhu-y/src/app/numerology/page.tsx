@@ -24,21 +24,34 @@ const Numerology = () => {
             <div className="px-[37px] mb-[39px] max-lg:p-1 w-full">
               <div className="border h-0 w-full border-dashed border-[#111111] mb-[30px]" />
               <div className="justify-between w-full flex flex-row max-lg:flex-col">
-                <div>
+                <div className="w-full">
                   <div className="uppercase text-base text-[#111111] font-extrabold">
                     Người nổi tiếng có số đường đời 1
                   </div>
                   <div className="mb-[38px] flex gap-12 overflow-x-auto flex-nowrap hide-scrollbar mt-6">
                     <div className="flex flex-col items-center">
-                      <Image alt="" src={images.avatar} className="w-18 h-18" />
+                      <Image
+                        alt=""
+                        src={images.avatar}
+                        className="w[72px] h[72px]"
+                      />
                       <div className="mt-2 text-[13px] text-[#111111] font-medium">
                         Name
                       </div>
                     </div>
                     <div className="flex flex-col items-center">
-                      <Image alt="" src={images.avatar} className="w-18 h-18" />
+                      <Image
+                        alt=""
+                        src={images.avatar}
+                        className="w[72px] h[72px]"
+                      />
                       <div className="mt-2 text-[13px] text-[#111111] font-medium">
                         Name
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <div className="w-[72px] h-[72px] p-6 bg-white text-center rounded-full text-[20px] text-[#111111] font-medium border border-[#111111] shadow-custom-shadow">
+                        +5
                       </div>
                     </div>
                   </div>

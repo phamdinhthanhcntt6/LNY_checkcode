@@ -24,7 +24,7 @@ export const Calendar = () => {
   };
 
   return (
-    <CardComponent className="grid grid-cols-11 gap-4 mt-12 border border-[#111111]  bg-white w-full max-lg:border-none max-lg:mt-0 max-md:p-1 max-xl:grid-cols-1">
+    <CardComponent className="grid grid-cols-11 gap-4 mt-12 border border-[#111111]  bg-white w-full max-lg:shadow-none max-lg:mt-0 max-md:p-1 max-xl:grid-cols-1">
       <div className="text-center col-span-5 p-6 max-md:p-0 rounded-l-[32px] mx-auto lg:border-[#6E7074] xl:border-r">
         <div className="text-center w-full">
           <div className="flex flex-col px-2 justify-center max-lg:w-full">

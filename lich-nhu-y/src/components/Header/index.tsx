@@ -91,11 +91,16 @@ export const Header = () => {
                           }`}
                         >
                           <div
-                            className={`text-sm font-semibold text-[#111111] ${
+                            className={`flex flex-row text-sm font-semibold text-[#111111] ${
                               isChoosen && "max-lg:text-[#FD5B3A]"
                             } `}
                           >
-                            {item.name}
+                            <div>{item.name}</div>
+                            <Image
+                              alt=""
+                              src={icons.arrowDown}
+                              className="ml-[3px]"
+                            />
                           </div>
                           <div
                             onMouseLeave={() => setOpenDropdown(false)}
