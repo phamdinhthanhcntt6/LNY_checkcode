@@ -1,17 +1,39 @@
 "use client";
 
 import { CardComponent } from "@/components/CardComponent/index";
+import { DreamDecodingType } from "@/components/DreamDecoding/data";
 import Modal from "@/components/Modal/index";
+import RequestHelper from "@/utils/RequestHelper";
+import { get, isEmpty } from "lodash";
 import { useState } from "react";
 
 const DreamDecoding = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [keyword, setKeyWord] = useState<string>("");
+  const [dreamData, setDreamData] = useState<DreamDecodingType[]>([]);
+
   const openModal = () => {
-    setIsOpen(true);
+    if (!isEmpty(keyword)) {
+      getDreamDecodingList(keyword);
+      setIsOpen(true);
+    }
   };
 
   const closeModal = () => {
     setIsOpen(false);
+  };
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setKeyWord(event.target.value);
+  };
+
+  const getDreamDecodingList = async (keyword: string, offset?: number) => {
+    offset = offset ?? 0;
+    const res = await RequestHelper.get({
+      url: `/v1/external/dream/list?keyword=${keyword}`,
+    });
+    const data = get(res, "data.rows");
+    setDreamData(data);
   };
 
   return (
@@ -24,6 +46,8 @@ const DreamDecoding = () => {
           Bạn mơ thấy gì? Hãy nhập nội dung giấc mơ của bạn và ấn giải mã
         </span>
         <input
+          value={keyword}
+          onChange={handleChange}
           placeholder="Ex: Con rắn"
           className="py-[19px] rounded-2xl w-full mt-2 border border-[#111111] mb-6 px-6"
         />
@@ -34,7 +58,12 @@ const DreamDecoding = () => {
           Giải mã
         </button>
       </div>
-      <Modal isOpen={isOpen} onClose={closeModal} />
+      <Modal
+        isOpen={isOpen}
+        onClose={closeModal}
+        data={dreamData}
+        keyword={keyword}
+      />
     </CardComponent>
   );
 };
