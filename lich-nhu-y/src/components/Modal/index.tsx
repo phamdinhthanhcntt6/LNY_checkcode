@@ -2,78 +2,63 @@
 
 import { CardComponent } from "@/components/CardComponent";
 import { DreamDecodingType } from "@/components/DreamDecoding/data";
-import RequestHelper from "@/utils/RequestHelper";
-import { get, isEmpty } from "lodash";
-import { useState } from "react";
+import { isEmpty } from "lodash";
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   data: DreamDecodingType[];
-  keyword?: string;
+  handleLoadMore?: () => void;
+  isLoading?: boolean;
+  fullData?: boolean;
 }
 
-const Modal = ({ isOpen, onClose, data, keyword }: ModalProps) => {
+const Modal = (props: ModalProps) => {
+  const { isOpen, onClose, data, handleLoadMore, isLoading, fullData } = props;
+
   if (!isOpen) return null;
 
-  const [idDream, setIdDream] = useState("");
-  const [detailDream, setDetailDream] = useState<DreamDecodingType>();
-
-  const getDreamDecodingDetail = async (id: string) => {
-    const res = await RequestHelper.get({
-      url: `/v1/external/dream/detail?id=${id}`,
-    });
-    const data = get(res, "data");
-    setDetailDream(data);
-  };
-
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 h-full w-full">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 h-full w-full max-md:px-4">
       <CardComponent
         title="Giải mã giấc mơ"
         onClose={onClose}
-        className="bg-white w-1/2 max-xl:w-3/4 max-lg:w-4/5 max-md:w-full"
+        className="bg-white w-1/2 max-xl:w-3/4 max-lg:w-4/5 max-md:w-full h-1/2 pr-2 pb-24"
       >
-        <>
-          {!isEmpty(idDream) ? (
-            <div className="px-[34px] py-6 flex flex-col">
-              <div className="" onClick={() => setIdDream("")}>
-                <button>&lt;</button>
-              </div>
-              {!isEmpty(detailDream) && <>Nội dung: {detailDream.content}</>}
-            </div>
-          ) : (
-            <>
-              {!isEmpty(data) ? (
-                <>
-                  <div className="px-[34px] py-4">
-                    <div className="mb-2">Từ khóa tìm kiếm: "{keyword}"</div>
-                    {data.map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex flex-row"
-                        onClick={() => {
-                          setIdDream(item.id);
-                          getDreamDecodingDetail(item.id);
-                        }}
-                      >
-                        <div className="flex-1">
-                          <button>{item.name}</button>
+        <div className="h-full overflow-y-auto scrollbar">
+          <div className="h-full">
+            {!isEmpty(data) ? (
+              <div className="py-10">
+                <div className="px-[34px] py-4">
+                  {data.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-row border-b-[1px] py-2 border-dashed hover:bg-slate-100 px-2"
+                    >
+                      <div className="flex flex-col">
+                        <div className="text-[#111111] font-bold text-sm">
+                          {item.name}
                         </div>
-                        <button className="scale-150">&gt;</button>
+                        <div className="text-[#111111] font-medium text-sm ">
+                          {item.content}
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                  {/* <div className="mx-auto mb-2 w-full items-center align-middle px-[34px] pb-6">
-                    <button className="">Xem thêm...</button>
-                  </div> */}
-                </>
-              ) : (
-                <div className="px-[34px] py-6">Không tìm thấy kết quả nào</div>
-              )}
-            </>
-          )}
-        </>
+                    </div>
+                  ))}
+                </div>
+                <button
+                  disabled={isLoading}
+                  className="mx-auto w-full items-center align-middle px-[34px] text-sm"
+                  onClick={handleLoadMore}
+                >
+                  {!fullData ? "Xem thêm... " : "Không tìm kết quả khác"}
+                </button>
+              </div>
+            ) : (
+              <div className="px-[34px] py-6">Không tìm thấy kết quả nào</div>
+            )}
+          </div>
+        </div>
       </CardComponent>
     </div>
   );
