@@ -5,6 +5,8 @@ import close from "./icon/close.svg";
 import iconLogo from "./icon/iconLogo.svg";
 import arrow from "./icon/arrow.svg";
 import arrowDown from "./icon/arrowDown.svg";
+import arrowLeft from "./icon/arrowLeft.svg";
+import arrowRight from "./icon/arrowRight.svg";
 
 export const icons = {
   facebook,
@@ -14,4 +16,6 @@ export const icons = {
   iconLogo,
   arrow,
   arrowDown,
+  arrowLeft,
+  arrowRight,
 };

@@ -2,6 +2,7 @@ import { images } from "@/assets/image";
 import Calendar from "@/components/Calendar";
 import { CardComponent } from "@/components/CardComponent";
 import DreamDecoding from "@/components/DreamDecoding/index";
+import LunarCalendarInfor from "@/components/LunarCalendarInfor";
 import Solar2Lunar from "@/components/Solar2Lunar/index";
 import Image from "next/image";
 
@@ -19,18 +20,7 @@ const HomePage = () => {
           />
           <Calendar />
           <div className="grid grid-cols-3 gap-8 mt-12 max-xl:grid-cols-1 p-[10px]">
-            <CardComponent
-              title="Xem ngày tốt xấu hôm nay "
-              className="col-span-2 row-span-2 h-full flex flex-col"
-            >
-              <div className="text-base py-6 p-[10px]">
-                <div className="h-[550px] max-md:h-[350px] overflow-y-auto px-[34px] scrollbar">
-                  <div className="text-sm font-medium mt-2">
-                    Giờ tốt hôm nay:
-                  </div>
-                </div>
-              </div>
-            </CardComponent>
+            <LunarCalendarInfor />
             <Solar2Lunar />
             <DreamDecoding />
           </div>

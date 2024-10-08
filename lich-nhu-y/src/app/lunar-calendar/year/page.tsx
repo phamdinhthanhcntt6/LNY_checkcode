@@ -13,7 +13,7 @@ const LunarCalendarYear = () => {
               title="Lịch âm"
               className="text-center flex flex-col"
             >
-              <div className="">
+              <div className="p-1 pb-6">
                 <div className="text-sm text-[#111111] font-medium scrollbar overflow-y-auto h-[550px] px-[10px]">
                   <ul className="p-6">
                     <>
@@ -48,7 +48,7 @@ const LunarCalendarYear = () => {
               title="Những ngày Khai Trương đẹp trong tháng 9 năm 2024"
               className="flex flex-col"
             >
-              <div className="">
+              <div className="p-1 pb-6">
                 <div className="text-sm text-[#111111] font-medium scrollbar overflow-y-auto h-[550px] px-[10px]">
                   <ul className="list-disc p-6">
                     <li>

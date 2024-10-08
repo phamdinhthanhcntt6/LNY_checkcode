@@ -16,7 +16,7 @@ export function MonthCaption(
     displayIndex: number;
   } & JSX.IntrinsicElements["div"]
 ) {
-  const { ...divProps } = props;
+  const { calendarMonth, displayIndex, ...divProps } = props;
   return (
     <div className="flex flex-row justify-between mb-4">
       <div {...divProps} className="text-lg font-bold text-[#111111]"></div>
