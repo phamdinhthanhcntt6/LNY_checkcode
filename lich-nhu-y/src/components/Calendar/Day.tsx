@@ -64,7 +64,9 @@ export function Day(
           } p-2 max-md:p-1 rounded-lg max-md:py-0 ${
             moment(day.date, "DD/MM/YYYY").format("YYYY-MM-DD") ===
               daySelected && "shadow-inset-red"
-          } ${modifiers.today && "bg-[#FFEAE6] shadow-inset-red"}`}
+          } ${
+            modifiers.today && "bg-[#FFEAE6] shadow-inset-red"
+          } cursor-pointer`}
         >
           <div className="flex flex-row items-center w-full gap-[10px] font-bold max-lg:-mt-2 ">
             <div

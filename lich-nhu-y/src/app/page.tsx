@@ -28,7 +28,7 @@ const HomePage = () => {
         <div className="text-2xl font-extrabold text-[#111111] mt-8 max-lg:px-4">
           Bài viết
         </div>
-        <div className="grid grid-cols-4 gap-8 max-sm:gap-2 mt-[35px] max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-2 max-lg:px-4">
+        <div className="grid grid-cols-4 gap-8 max-sm:gap-2 mt-[35px] max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-2 max-lg:px-4 cursor-pointer">
           {array.map((index) => (
             <div className="flex flex-col" key={index}>
               <Image alt="" src={images.image} className="w-full" />
