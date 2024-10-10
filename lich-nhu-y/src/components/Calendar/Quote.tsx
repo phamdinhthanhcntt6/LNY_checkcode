@@ -15,7 +15,7 @@ const Quote = () => {
     const res = await RequestHelper.get({
       url: "/v1/external/quote/random",
     });
-    const data = get(res, "data.quote");
+    const data = get(res, "data.quote", "") as string;
     setQuote(data);
     return data;
   };

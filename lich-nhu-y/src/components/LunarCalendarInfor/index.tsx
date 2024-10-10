@@ -28,11 +28,11 @@ const LunarCalendarInfor = () => {
     const res = await RequestHelper.get({
       url: `/v1/external/lunar-day/info?solar_day=${formatSolarDay()}`,
     });
-    setLunarDayInfo(get(res, "data"));
-    setBadHours(get(res, "data.bad_hours"));
-    setGoodHours(get(res, "data.good_hours"));
-    setStar_infor(get(res, "data.star_info"));
-    setTietKhi(get(res, "data.tiet_khi"));
+    setLunarDayInfo(get(res, "data") as LunarDayType);
+    setBadHours(get(res, "data.bad_hours") as BadHour[]);
+    setGoodHours(get(res, "data.good_hours") as GoodHour[]);
+    setStar_infor(get(res, "data.star_info") as StarInfo[]);
+    setTietKhi(get(res, "data.tiet_khi") as TietKhi[]);
   };
 
   return (

@@ -50,7 +50,7 @@ const DreamDecoding = () => {
         offset * page
       }`,
     });
-    const data = get(res, "data.rows");
+    const data = get(res, "data.rows") as DreamDecodingType[];
     if (isEmpty(data)) {
       setFullData(true);
     }
