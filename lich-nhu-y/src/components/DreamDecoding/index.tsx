@@ -17,7 +17,7 @@ const DreamDecoding = () => {
 
   useEffect(() => {
     getDreamDecodingList(keyword);
-  }, [page]);
+  }, [page, keyword]);
 
   const openModal = () => {
     if (!isEmpty(keyword)) {
