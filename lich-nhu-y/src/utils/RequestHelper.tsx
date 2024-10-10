@@ -1,40 +1,45 @@
 class RequestHelper {
-  DOMAIN = "https://be-staging.lichnhuy.vn";
+  DOMAIN = process.env.NEXT_PUBLIC_API_URL;
 
-  querify = (url: string, queryObject: RequestHelper) => {
+  querify = (url: string, queryObject?: Record<string, unknown>): string => {
     const newUrl = url;
     if (queryObject === undefined) return newUrl;
-    // newUrl += `?${qs.stringify(queryObject)}`;
     return newUrl;
   };
 
-  makeSignature = (data: any) => {
+  makeSignature = (data: Record<string, unknown>): Record<string, unknown> => {
     return data;
   };
 
-  get = async ({ url = "", data = {}, headers = {} }) => {
+  get = async ({
+    url = "",
+    data = {},
+    headers = {},
+  }: {
+    url?: string;
+    data?: Record<string, unknown>;
+    headers?: Record<string, string>;
+  }): Promise<Record<string, unknown>> => {
     const apiUrl = this.querify(
       this.DOMAIN + url,
       !data || Object.keys(data).length === 0
         ? this.makeSignature({})
         : this.makeSignature(data)
     );
-
     const response = await fetch(apiUrl, {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        // authorization: this.token ? this.token : this.accessToken,
         ...headers,
       },
     });
     const res = await response.json();
-
     if (!res || res.status === false) {
-      //   await this.handleException(res);
+      // TODO: handle error
     }
     return res;
   };
 }
 
-export default new RequestHelper();
+const requestHelperInstance = new RequestHelper();
+export default requestHelperInstance;
