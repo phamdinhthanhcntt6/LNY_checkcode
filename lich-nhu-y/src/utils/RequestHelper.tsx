@@ -1,8 +1,8 @@
 class RequestHelper {
   DOMAIN = "https://be-staging.lichnhuy.vn";
 
-  querify = (url: string, queryObject: any) => {
-    let newUrl = url;
+  querify = (url: string, queryObject: RequestHelper) => {
+    const newUrl = url;
     if (queryObject === undefined) return newUrl;
     // newUrl += `?${qs.stringify(queryObject)}`;
     return newUrl;
