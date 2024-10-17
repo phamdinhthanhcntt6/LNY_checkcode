@@ -42,4 +42,5 @@ class RequestHelper {
 }
 
 const requestHelperInstance = new RequestHelper();
+
 export default requestHelperInstance;

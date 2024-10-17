@@ -16,12 +16,12 @@ type navItem = {
 };
 
 export const Header = () => {
-  const [isVisble, setIsVisble] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    setIsVisble(false);
+    setIsVisible(false);
     setOpenDropdown(false);
   }, [pathname]);
 
@@ -54,7 +54,7 @@ export const Header = () => {
       <div className="lg:hidden">
         <button
           onClick={() => {
-            setIsVisble(!isVisble);
+            setIsVisible(!isVisible);
           }}
         >
           <Image alt="menu" src={icons.menu} />
@@ -81,7 +81,7 @@ export const Header = () => {
               }}
               className={`${
                 item.path === pathname &&
-                "max-lg:text-[#FD5B3A] font-bold text-sm"
+                "max-lg:text-[#FD5B3A] font-semibold text-sm"
               }`}
             >
               {item.name}
@@ -103,7 +103,7 @@ export const Header = () => {
         <div className={`flex max-lg:p-1`}>
           <div
             className={`flex flex-row gap-6 max-2xl:gap-1 max-xl:gap-0 flex-1 max-lg:items-center  ${
-              isVisble
+              isVisible
                 ? "max-lg:absolute max-lg:flex-col items-center right-0 top-20 max-lg:w-full max-lg:bg-[#F2F4F7] max-lg:py-6 max-lg:px-4"
                 : "max-lg:hidden"
             }`}
@@ -130,7 +130,7 @@ export const Header = () => {
                           <div
                             className={`${
                               item.path === pathname &&
-                              "max-lg:text-[#FD5B3A] font-bold text-sm"
+                              "max-lg:text-[#FD5B3A] font-semibold text-sm"
                             }`}
                           >
                             <div
@@ -161,7 +161,7 @@ export const Header = () => {
                                     "border-b border-[#111111] border-dashed "
                                   } ${
                                     child.path === pathname &&
-                                    "text-[#FD5B3A] font-bold text-sm"
+                                    "text-[#FD5B3A] font-semibold text-sm"
                                   }`}
                                   key={index}
                                 >
