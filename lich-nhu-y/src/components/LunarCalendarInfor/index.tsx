@@ -10,7 +10,7 @@ import {
 } from "@/components/LunarCalendarInfor/data";
 import { formatSolarDay } from "@/libs/utils";
 import RequestHelper from "@/utils/RequestHelper";
-import { get } from "lodash";
+import { get, isEmpty } from "lodash";
 import { useEffect, useState } from "react";
 
 const LunarCalendarInfor = () => {
@@ -41,12 +41,12 @@ const LunarCalendarInfor = () => {
       className="col-span-2 row-span-2 h-full flex flex-col"
     >
       <div className=" py-6 p-[10px] text-sm font-medium">
-        <div className="h-[550px] max-md:h-[350px] overflow-y-auto px-[34px] max-md:px-4 scrollbar">
+        <div className="h-[550px] max-2xl:h-[600px] max-xl:h-[550px] max-md:h-[350px] overflow-y-auto px-[34px] max-md:px-4 scrollbar">
           <div className="flex flex-col max-md:grid max-md:grid-cols-2">
             <div className="flex flex-col">
-              <div>Giờ hoàng đạo</div>
+              {!isEmpty(goodHours) && <div>Giờ hoàng đạo</div>}
               <div className=" flex max-md:flex-col max-md:mt-2">
-                {goodHours &&
+                {!isEmpty(goodHours) &&
                   goodHours.map((item, index) => (
                     <div key={index}>
                       {`${item.name} (${item.from_hour}-${item.to_hour})`}
@@ -58,9 +58,9 @@ const LunarCalendarInfor = () => {
               </div>
             </div>
             <div className="flex flex-col">
-              <div>Giờ hắc đạo</div>
+              {!isEmpty(badHours) && <div>Giờ hắc đạo</div>}
               <div className=" flex max-md:flex-col max-md:mt-2">
-                {badHours &&
+                {!isEmpty(badHours) &&
                   badHours.map((item, index) => (
                     <div key={index}>
                       {`${item.name} (${item.from_hour}-${item.to_hour})`}
@@ -95,7 +95,7 @@ const LunarCalendarInfor = () => {
               <div>-&nbsp;{get(star_infor, "should_do")}</div>
               <div>-&nbsp;{get(star_infor, "should_do_not")}</div>
               <div>-&nbsp;{get(star_infor, "exception")}</div>
-              <pre className="text-sm mx-auto mt-2">
+              <pre className="font-mono text-sm leading-relaxed p-2 rounded-md">
                 {get(star_infor, "poem")}
               </pre>
             </div>
@@ -118,4 +118,5 @@ const LunarCalendarInfor = () => {
     </CardComponent>
   );
 };
+
 export default LunarCalendarInfor;

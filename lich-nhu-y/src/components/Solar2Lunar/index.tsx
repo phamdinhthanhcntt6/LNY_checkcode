@@ -3,37 +3,26 @@
 import { icons } from "@/assets/icon";
 import { CardComponent } from "@/components/CardComponent";
 import { solar2Lunar } from "@lich-nhu-y/lunar";
-import moment from "moment";
 import Image from "next/image";
 import { useState } from "react";
-
-type resultType = {
-  date: string;
-  format: string;
-  is_leap: boolean;
-};
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Solar2Lunar = () => {
-  const [result, setResult] = useState<resultType>();
-  const [value, setValue] = useState<string | undefined>(undefined);
+  const [value, setValue] = useState<string | undefined>("");
+  const [result, setResult] = useState<string | undefined>("");
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+  const handleChange = (date: Date | null) => {
+    const day = date!.getDate();
+    const month = date!.getMonth() + 1;
+    const year = date!.getFullYear();
+    setValue(`${day}/${month}/${year}`);
   };
 
-  const handleSolar2Lunar = (solarDay: number | string) => {
-    const res = solar2Lunar(String(solarDay), ["DD/MM/YYYY", "YYYY/MM/DD"]);
-    setResult(res);
-  };
-
-  const handleChangeSolar2Lunar = (value: string | undefined) => {
-    handleSolar2Lunar(value!);
-    setValue(`Dương: ${moment(value, "YYYY-MM-DD").format("DD/MM/YYYY")}`);
-  };
-
-  const handleChangeDifferentDay = () => {
-    setValue(undefined);
-    setResult(undefined);
+  const handleSolar2Lunar = (date: string | undefined) => {
+    const lunarDate = solar2Lunar(date!, ["DD/MM/YYYY"]);
+    lunarDate && console.log(lunarDate?.format);
+    setResult(lunarDate?.date);
   };
 
   return (
@@ -41,56 +30,45 @@ const Solar2Lunar = () => {
       title="Đổi ngày âm dương"
       className="col-span-1 max-xl:col-span-2"
     >
-      <div className={`px-5 py-8 flex flex-col`}>
-        <span className="text-sm text-[#111111] leading-[22px] font-semibold">
-          {result ? "Kết quả chuyển đổi" : " Chọn ngày dương"}
+      <div className="px-5 py-8 flex flex-col">
+        <span className="text-sm text-[#111111] leading-[22px] font-semibold mb-2">
+          Chọn ngày dương
         </span>
-        <div
-          className={`flex ${
-            result && "flex-row max-md:flex-col"
-          } items-center gap-[14px] max-md:gap-0`}
-        >
-          <input
-            type={result ? "text" : "date"}
-            disabled={result && true}
-            value={value}
-            onChange={handleChange}
-            placeholder="dd/mm/yyyy"
-            className={`py-[19px] rounded-2xl mt-2 border max-md:w-full border-[#111111] mb-6 px-6  text-sm text-[#111111] font-bold ${
-              result && "text-center max-2xl:px-1"
-            } flex-1 ${result ? "w-5/12" : "w-full"}`}
-            name="result"
+        <div className="flex flex-row xl:flex-col 2xl:flex-row items-center">
+          <DatePicker
+            disabled={result ? true : false}
+            className="bg-white"
+            value={result ? `Dương: ${value}` : `${value}`}
+            onSelect={(date) => {
+              date && handleChange(date);
+            }}
           />
-
           <Image
             src={icons.arrow}
-            alt="arrow"
-            className={`${result ?? "hidden"} mb-3 -mx-2 max-md:rotate-90 h-2`}
+            alt=""
+            className={`mx-2 md:-mt-4  max-2xl:pt-4 max-2xl:pb-3 max-xl:py-0 ${
+              !result && "hidden"
+            }
+              max-md:rotate-90 xl:rotate-90 2xl:rotate-0`}
           />
-
           <input
-            disabled
-            value={result ? `Âm: ${result.date}` : ""}
-            placeholder="dd/mm/yyyy"
-            className={`py-[19px] rounded-2xl mt-2 border border-[#111111] mb-6 px-6 max-2xl:px-1 max-xl:px-2 max-md:w-full w-5/12 flex-1 text-sm text-[#111111] font-bold text-center ${
-              result ?? "hidden"
+            value={`Âm: ${result}`}
+            className={`py-[19px] rounded-2xl w-full font-bold border border-[#111111] mb-6 px-6 max-md:mt-6 ${
+              !result && "hidden"
             }`}
-            name="am"
           />
         </div>
         <button
           className="bg-[#111111] text-white w-full py-[19px] rounded-2xl font-bold text-sm"
           onClick={() => {
-            value &&
-              (!result
-                ? value && handleChangeSolar2Lunar(value)
-                : handleChangeDifferentDay());
+            value && !result ? handleSolar2Lunar(value) : setResult("");
           }}
         >
-          {result ? "Chọn ngày khác" : "Chuyển đổi"}
+          {!result ? "Chuyển đổi" : "Chọn ngày khác"}
         </button>
       </div>
     </CardComponent>
   );
 };
+
 export default Solar2Lunar;

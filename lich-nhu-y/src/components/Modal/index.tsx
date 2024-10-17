@@ -3,6 +3,7 @@
 import { CardComponent } from "@/components/CardComponent";
 import { DreamDecodingType } from "@/components/DreamDecoding/data";
 import { isEmpty } from "lodash";
+import { useEffect } from "react";
 
 interface ModalProps {
   isOpen: boolean;
@@ -11,10 +12,32 @@ interface ModalProps {
   handleLoadMore?: () => void;
   isLoading?: boolean;
   fullData?: boolean;
+  hasMoreData?: boolean;
+  noResults?: boolean;
 }
 
 const Modal = (props: ModalProps) => {
-  const { isOpen, onClose, data, handleLoadMore, isLoading, fullData } = props;
+  const {
+    isOpen,
+    onClose,
+    data,
+    handleLoadMore,
+    isLoading,
+    hasMoreData,
+    noResults,
+  } = props;
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -28,8 +51,8 @@ const Modal = (props: ModalProps) => {
         <div className="h-full overflow-y-auto scrollbar">
           <div className="h-full">
             {!isEmpty(data) ? (
-              <div className="py-10">
-                <div className="px-[34px] py-4">
+              <div className="py-4">
+                <div className="px-[34px]">
                   {data.map((item, index) => (
                     <div
                       key={index}
@@ -46,16 +69,20 @@ const Modal = (props: ModalProps) => {
                     </div>
                   ))}
                 </div>
-                <button
-                  disabled={isLoading}
-                  className="mx-auto w-full items-center align-middle px-[34px] text-sm"
-                  onClick={handleLoadMore}
-                >
-                  {!fullData ? "Xem thêm... " : "Không tìm kết quả khác"}
-                </button>
+                {hasMoreData && (
+                  <button
+                    disabled={isLoading}
+                    className="mx-auto w-full items-center align-middle px-[34px] text-sm"
+                    onClick={handleLoadMore}
+                  >
+                    {isLoading ? "Đang tải..." : "Xem thêm..."}
+                  </button>
+                )}
               </div>
-            ) : (
+            ) : noResults ? (
               <div className="px-[34px] py-6">Không tìm thấy kết quả nào</div>
+            ) : (
+              <div className="px-[34px] py-6">Đang tải...</div>
             )}
           </div>
         </div>

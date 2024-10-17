@@ -81,8 +81,18 @@ export function Day(
          `}
             />
           </div>
-          <div className="flex flex-col items-center text-[13px] max-xl:p-0 max-md:-mt-2">
-            <div className="max-md:text-[10px]">{lunarDayInfo.dayLunar}</div>
+          <div className="flex flex-col items-center text-[13px] max-xl:p-0 max-md:-mt-2 font-medium">
+            <div
+              className={`max-md:text-[10px] ${
+                lunarDayInfo.dayLunar === "01" && "text-[red]"
+              }`}
+            >
+              {parseInt(lunarDayInfo.dayLunar).toString()}
+              {(lunarDayInfo.dayLunar === "01" ||
+                lunarDayInfo.daySolar === "01") && (
+                <>/{parseInt(lunarDayInfo.monthLunar).toString()}</>
+              )}
+            </div>
             <div className="text-nowrap max-md:text-[8px] -mt-3">
               {get(lunarDayInfo.lunarDay, "day_stem_branch")}
             </div>
