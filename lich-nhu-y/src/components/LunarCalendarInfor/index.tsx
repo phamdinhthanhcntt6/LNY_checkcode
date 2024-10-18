@@ -40,9 +40,9 @@ const LunarCalendarInfor = () => {
       title="Xem ngày tốt xấu hôm nay "
       className="col-span-2 row-span-2 h-full flex flex-col"
     >
-      <div className=" py-6 p-[10px] text-sm font-medium">
+      <div className="px-[10px] text-sm font-medium pt-1">
         <div className="h-[550px] max-2xl:h-[600px] max-xl:h-[550px] max-md:h-[350px] overflow-y-auto px-[34px] max-md:px-4 scrollbar flex flex-col">
-          <div className="flex flex-col max-md:grid max-md:grid-cols-2">
+          <div className="flex flex-col max-md:grid max-md:grid-cols-2 pt-6">
             <div className="flex flex-col">
               {!isEmpty(goodHours) && (
                 <div className="font-bold">Giờ hoàng đạo</div>
@@ -128,7 +128,7 @@ const LunarCalendarInfor = () => {
                 {get(tietKhi, "name")}
               </span>
               &nbsp;&ndash;&nbsp;
-              <div>{get(tietKhi, "meaning")}</div>
+              <div>{get(tietKhi, "meaning")}</div>&nbsp;&ndash;&nbsp;
               <div>
                 {`(${get(tietKhi, "from_date_format")}-${get(
                   tietKhi,
