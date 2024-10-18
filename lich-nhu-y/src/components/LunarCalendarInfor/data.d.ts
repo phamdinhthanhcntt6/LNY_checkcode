@@ -1,9 +1,3 @@
-export interface LunarCalendarInforType {
-  status: boolean;
-  message: string;
-  data: LunarDayType;
-}
-
 export interface LunarDayType {
   good_hours: GoodHour[];
   bad_hours: BadHour[];
@@ -15,8 +9,16 @@ export interface LunarDayType {
   truc_to_do: string;
   truc_not_to_do: string;
   star: string;
-  star_info: StarInfo;
   tiet_khi: TietKhi;
+  elements: string;
+  age_conflict_day: string;
+  age_conflict_month: string;
+  ly_thuan_phong: LyThuanPhong[];
+  good_stars: string;
+  bad_stars: string;
+  huong_hac_than: string;
+  huong_tai_than: string;
+  huong_hy_than: string;
 }
 
 export interface GoodHour {
@@ -33,19 +35,6 @@ export interface BadHour {
   to_hour: number;
 }
 
-export interface StarInfo {
-  name: string;
-  good_bad: string;
-  direction: string;
-  star: string;
-  star_content: string;
-  five_elements: string;
-  should_do: string;
-  should_do_not: string;
-  exception: string;
-  poem: string;
-}
-
 export interface TietKhi {
   name: string;
   meaning: string;
@@ -53,4 +42,10 @@ export interface TietKhi {
   to_date: number;
   from_date_format: string;
   to_date_format: string;
+}
+
+export interface LyThuanPhong {
+  name: string;
+  content: string;
+  time_start: string;
 }
