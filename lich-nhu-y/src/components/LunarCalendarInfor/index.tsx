@@ -80,7 +80,7 @@ const LunarCalendarInfor = () => {
           <span>
             <span className="font-bold">Hành:&nbsp;</span>
             <span>{get(lunarDayInfo, "elements")}</span>
-          </span>{" "}
+          </span>
           <br />
           <div>
             <p className="font-bold">Tuổi xung: </p>
@@ -128,12 +128,12 @@ const LunarCalendarInfor = () => {
                 {get(tietKhi, "name")}
               </span>
               &nbsp;&ndash;&nbsp;
-              <div>{get(tietKhi, "meaning")}</div>&nbsp;&ndash;&nbsp;
+              <div>{get(tietKhi, "meaning")}</div>
               <div>
-                {`${get(tietKhi, "from_date_format")}-${get(
+                {`(${get(tietKhi, "from_date_format")}-${get(
                   tietKhi,
                   "to_date_format"
-                )}`}
+                )})`}
               </div>
             </span>
           )}
@@ -157,7 +157,7 @@ const LunarCalendarInfor = () => {
           <br />
           <div className="flex flex-row">
             <span>
-              <span className="font-bold">Trách nhật:&nbsp;</span>{" "}
+              <span className="font-bold">Trách nhật:&nbsp;</span>
               <span className="flex flex-row">
                 {get(lunarDayInfo, "trach_nhat_name")}&ndash;
                 {get(lunarDayInfo, "trach_nhat_meaning")}&ndash;
