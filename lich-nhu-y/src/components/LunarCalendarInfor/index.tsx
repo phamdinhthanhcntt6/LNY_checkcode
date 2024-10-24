@@ -120,7 +120,7 @@ const LunarCalendarInfor = () => {
               &nbsp;&ndash;&nbsp;
               <div>{data?.tiet_khi.meaning}</div>&nbsp;&ndash;&nbsp;
               <div>
-                {`(${data?.tiet_khi.from_date_format})}-${data?.tiet_khi.to_date_format})`}
+                {`(${data?.tiet_khi.from_date_format}-${data?.tiet_khi.to_date_format})`}
               </div>
             </span>
           )}
