@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@lich-nhu-y/lunar": "^0.4.0",
+    "@tanstack/react-query": "^5.59.16",
+    "@tanstack/react-query-next-experimental": "^5.59.16",
     "date-fns": "^4.1.0",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",

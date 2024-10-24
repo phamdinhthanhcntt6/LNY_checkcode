@@ -19,7 +19,7 @@ class RequestHelper {
     url?: string;
     data?: Record<string, unknown>;
     headers?: Record<string, string>;
-  }): Promise<Record<string, unknown>> => {
+  }) => {
     const apiUrl = this.querify(
       this.DOMAIN + url,
       !data || Object.keys(data).length === 0
