@@ -21,6 +21,11 @@ export interface LunarDayType {
   huong_hy_than: string;
 }
 
+export type DataResponse<T> = {
+  data: T;
+  message: string;
+  status: boolean;
+};
 export interface GoodHour {
   id: string;
   name: string;

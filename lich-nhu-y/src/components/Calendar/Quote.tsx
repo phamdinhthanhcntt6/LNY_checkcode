@@ -1,28 +1,26 @@
 "use client";
 
 import RequestHelper from "@/utils/RequestHelper";
-import { get } from "lodash";
-import { useLayoutEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const Quote = () => {
-  const [quote, setQuote] = useState("");
+  const { data, isLoading } = useQuery({
+    queryKey: ["quote"],
+    queryFn: async () => {
+      const res = await RequestHelper.get({
+        url: "/v1/external/quote/random",
+      });
+      return await res.data.quote;
+    },
+  });
 
-  useLayoutEffect(() => {
-    getQuote();
-  }, []);
-
-  const getQuote = async () => {
-    const res = await RequestHelper.get({
-      url: "/v1/external/quote/random",
-    });
-    const data = get(res, "data.quote", "") as string;
-    setQuote(data);
-    return data;
-  };
+  if (isLoading) {
+    return <div>___</div>;
+  }
 
   return (
     <div className="text-sm text-[#111111] leading-[22px] font-semibold mx-auto mt-8 w-full">
-      {quote}
+      {data}
     </div>
   );
 };

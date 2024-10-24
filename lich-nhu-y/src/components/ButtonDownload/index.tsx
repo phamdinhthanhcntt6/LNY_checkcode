@@ -1,5 +1,3 @@
-"use client";
-
 interface Props {
   className?: string;
   title?: string;

@@ -58,13 +58,9 @@ const Modal = (props: ModalProps) => {
                       key={index}
                       className="flex flex-row border-b-[1px] py-2 border-dashed hover:bg-slate-100 px-2"
                     >
-                      <div className="flex flex-col">
-                        <div className="text-[#111111] font-bold text-sm">
-                          {item.name}
-                        </div>
-                        <div className="text-[#111111] font-medium text-sm ">
-                          {item.content}
-                        </div>
+                      <div className="flex flex-col text-[#111111] text-sm">
+                        <div className="font-bold">{item.name}</div>
+                        <div className="font-medium">{item.content}</div>
                       </div>
                     </div>
                   ))}
