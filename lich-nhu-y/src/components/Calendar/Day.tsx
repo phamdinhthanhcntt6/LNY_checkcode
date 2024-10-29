@@ -36,11 +36,11 @@ export function Day(
   const colorDayType = () => {
     const colorType = lunarDayInfo.dayType || "";
 
-    return colorType === "NORMAL"
-      ? "bg-[#D9D9D9]"
-      : colorType === "GOOD"
+    return colorType === "GOOD"
       ? "bg-[#28A521]"
-      : "bg-[#E83D3D]";
+      : colorType === "BAD"
+      ? "bg-[#E83D3D]"
+      : "";
   };
 
   const isSunday = (checkDate: Date): boolean => {
@@ -93,7 +93,7 @@ export function Day(
                 <>/{parseInt(lunarDayInfo.monthLunar).toString()}</>
               )}
             </div>
-            <div className="text-nowrap max-md:text-[8px] -mt-3">
+            <div className="text-nowrap max-md:text-[7px] -mt-3 line-clamp-1">
               {get(lunarDayInfo.lunarDay, "day_stem_branch")}
             </div>
           </div>
