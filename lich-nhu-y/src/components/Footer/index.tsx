@@ -1,5 +1,6 @@
 import { images } from "@/assets/image";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -33,12 +34,20 @@ export const Footer = () => {
             Tải ứng dụng Lịch Như Ý
           </div>
           <div className="flex flex-row gap-4 mt-4 max-lg:mb-4">
-            <button>
+            <Link
+              href={
+                "https://apps.apple.com/vn/app/l%E1%BB%8Bch-nh%C6%B0-%C3%BD-v%E1%BA%A1n-ni%C3%AAn-2024/id797395252"
+              }
+            >
               <Image src={images.appstore} alt="" className="w-full h-12" />
-            </button>
-            <button>
+            </Link>
+            <Link
+              href={
+                "https://play.google.com/store/apps/details?id=com.lichnhuy&hl=vi&pli=1"
+              }
+            >
               <Image src={images.chplay} alt="" className="w-full h-12" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
