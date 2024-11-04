@@ -33,7 +33,7 @@ const HomePage = () => {
               <Image alt="" src={images.image} className="w-full" />
               <div className="text-base font-extrabold mt-8 text-[#111111] hover:underline line-clamp-2">
                 Phong thủy mùa Thu 2024: Cơ hội để bùng nổ sức sáng tạo và giao
-                tiếp hiệu quả
+                tiếp hiệu quả111111
               </div>
             </div>
           ))}
