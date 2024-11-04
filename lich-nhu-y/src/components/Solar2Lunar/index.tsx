@@ -21,7 +21,6 @@ const Solar2Lunar = () => {
 
   const handleSolar2Lunar = (date: string | undefined) => {
     const lunarDate = solar2Lunar(date!, ["DD/MM/YYYY"]);
-    lunarDate && console.log(lunarDate?.format);
     setResult(lunarDate?.date);
   };
 

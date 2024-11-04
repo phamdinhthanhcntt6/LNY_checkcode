@@ -25,6 +25,22 @@ export const handleDayType = (dayType: string): string | undefined => {
   return dayTypes[dayType];
 };
 
+export const colorDayType = (day: string) => {
+  return day === "GOOD"
+    ? "border border-[#28A521] text-[#28A521]"
+    : day === "BAD"
+    ? "border border-[#E83D3D] text-[#E83D3D]"
+    : "";
+};
+
+export const colorLunarDay = (day: string) => {
+  return day === "NORMAL"
+    ? "text-[#111111]"
+    : day === "GOOD"
+    ? "border-[#28A521] text-[#28A521]"
+    : "border-[#E83D3D] text-[#E83D3D]";
+};
+
 export const nameThu = (thu: string): string | undefined => {
   const daysOfWeek: { [key: string]: string } = {
     Monday: "Thứ hai",

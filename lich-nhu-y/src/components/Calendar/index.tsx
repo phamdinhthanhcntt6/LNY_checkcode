@@ -2,8 +2,14 @@
 
 import DatePicker from "@/components/Calendar/DatePicker";
 import Quote from "@/components/Calendar/Quote";
-import { CardComponent } from "@/components/CardComponent";
-import { getLunarDayInfoFormatted, handleDayType, nameThu } from "@/libs/utils";
+import { CardNoTitleComponent } from "@/components/CardNoTitleComponent";
+import {
+  colorDayType,
+  colorLunarDay,
+  getLunarDayInfoFormatted,
+  handleDayType,
+  nameThu,
+} from "@/libs/utils";
 import { useCalendarStore } from "@/zustand/calendarStore";
 import { get, isEmpty } from "lodash";
 import { useMemo } from "react";
@@ -16,24 +22,8 @@ export const Calendar = () => {
     [daySelected]
   );
 
-  const colorDayType = (day: string) => {
-    return day === "GOOD"
-      ? "border border-[#28A521] text-[#28A521]"
-      : day === "BAD"
-      ? "border border-[#E83D3D] text-[#E83D3D]"
-      : "";
-  };
-
-  const colorLunarDay = (day: string) => {
-    return day === "NORMAL"
-      ? "text-[#111111]"
-      : day === "GOOD"
-      ? "border-[#28A521] text-[#28A521]"
-      : "border-[#E83D3D] text-[#E83D3D]";
-  };
-
   return (
-    <CardComponent className="grid grid-cols-11 gap-4 mt-12 border border-[#111111] bg-white w-full max-lg:shadow-none max-lg:mt-0 max-md:p-3  max-xl:grid-cols-1 max-lg:border-none">
+    <CardNoTitleComponent className="grid grid-cols-11 gap-4 mt-12 border border-[#111111] bg-white w-full max-lg:shadow-none max-lg:mt-0 max-md:p-3  max-xl:grid-cols-1 max-lg:border-none">
       <div className="text-center col-span-5 p-6 max-md:p-0 rounded-l-[32px]  lg:border-[#6E7074] xl:border-r max-lg:ml-4">
         <div className="text-center w-full">
           <div className="flex flex-col px-2 justify-center max-lg:w-full">
@@ -116,7 +106,7 @@ export const Calendar = () => {
       <div className="col-span-6 w-full xl:-ml-2 max-md:">
         <DatePicker />
       </div>
-    </CardComponent>
+    </CardNoTitleComponent>
   );
 };
 

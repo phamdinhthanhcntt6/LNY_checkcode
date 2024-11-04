@@ -13,7 +13,7 @@ export const Footer = () => {
               Số 11, ngõ 71 Láng Hạ, quận Ba Đình, thành phố Hà Nội
             </li>
             <li className="text-sm font-medium text-[#111111]">
-              Liên hệ hợp tác & Hỗ trợ: 
+              Liên hệ hợp tác & Hỗ trợ:
               <button className="hover:underline">lichnhuy@appota.com</button>
             </li>
           </ul>
@@ -35,6 +35,7 @@ export const Footer = () => {
           </div>
           <div className="flex flex-row gap-4 mt-4 max-lg:mb-4">
             <Link
+              target="_blank"
               href={
                 "https://apps.apple.com/vn/app/l%E1%BB%8Bch-nh%C6%B0-%C3%BD-v%E1%BA%A1n-ni%C3%AAn-2024/id797395252"
               }
@@ -42,6 +43,7 @@ export const Footer = () => {
               <Image src={images.appstore} alt="" className="w-full h-12" />
             </Link>
             <Link
+              target="_blank"
               href={
                 "https://play.google.com/store/apps/details?id=com.lichnhuy&hl=vi&pli=1"
               }

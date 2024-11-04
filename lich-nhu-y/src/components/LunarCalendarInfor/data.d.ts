@@ -26,6 +26,7 @@ export type DataResponse<T> = {
   message: string;
   status: boolean;
 };
+
 export interface GoodHour {
   id: string;
   name: string;

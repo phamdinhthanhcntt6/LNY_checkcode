@@ -19,14 +19,14 @@ export const CardComponent = (props: Props) => {
       className={`bg-[#F2F4F7] rounded-[32px] border border-[#111111]
           ${noBorder ?? "shadow-custom-shadow"} ${className}`}
     >
-      {title && (
-        <div className="flex flex-col bg-white rounded-t-[32px]">
+      {
+        <div className="flex flex-col bg-white rounded-t-[32px] ">
           <div className="flex flex-row items-center">
             <div
               className={`${
                 titlePosition === "left"
-                  ? "text-base font-extrabold w-full p-4 pl-8 text-left leading-[18px]"
-                  : "text-center w-full p-4 uppercase font-extrabold text-base"
+                  ? "text-base font-extrabold w-full p-4 pl-8 text-left leading-[18px] h-[50px]"
+                  : "text-center w-full p-4 uppercase font-extrabold text-base h-[50px]"
               }`}
             >
               {title}
@@ -39,7 +39,7 @@ export const CardComponent = (props: Props) => {
           </div>
           <div className="border border-dashed w-full flex flex-row border-[#111111]" />
         </div>
-      )}
+      }
       <>{children}</>
     </div>
   );
