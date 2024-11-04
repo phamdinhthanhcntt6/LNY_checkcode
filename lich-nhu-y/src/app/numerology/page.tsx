@@ -71,11 +71,13 @@ const Numerology = () => {
                           </>
                         )
                       )}
-                      <div className="pb-2">
-                        <div className="w-[72px] text-center h-[72px] p-5 max-md:p-2 bg-white rounded-full text-[20px] text-[#111111] font-medium border border-[#111111] shadow-custom-shadow">
-                          +{data?.numerology_people.length - 3}
+                      {data?.numerology_people.length && (
+                        <div className="pb-2">
+                          <div className="w-[72px] text-center h-[72px] p-5 max-md:p-2 bg-white rounded-full text-[20px] text-[#111111] font-medium border border-[#111111] shadow-custom-shadow">
+                            +{data?.numerology_people.length - 3}
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   )}
                 </div>
